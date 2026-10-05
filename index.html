@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HM Block · Nov 15 · sub-1:20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --bg-elev: #12161c;
+    --bg-card: #161b22;
+    --border: #232a34;
+    --border-soft: #1c222b;
+    --text: #e6edf3;
+    --text-dim: #8b96a5;
+    --text-mute: #5b6572;
+    --accent: #6ee7b7;
+
+    --rest: #3a4250;
+    --easy: #4ade80;
+    --long: #22d3ee;
+    --marathon: #fbbf24;
+    --threshold: #fb923c;
+    --hmp: #f87171;
+    --cv: #ef4444;
+    --vo2: #e879f9;
+    --race: #fde047;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 48px 32px 96px; }
+
+  /* HEADER */
+  header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; flex-wrap: wrap; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); }
+  .brand-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+  h1 { font-size: 42px; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px; }
+  h1 .accent { color: var(--accent); }
+  .subtitle { color: var(--text-dim); margin-top: 8px; font-size: 15px; }
+  .race-badge { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; background: linear-gradient(135deg, rgba(253,224,71,0.12), rgba(251,146,60,0.08)); border: 1px solid rgba(253,224,71,0.3); border-radius: 12px; }
+  .race-badge .label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #fde047; }
+  .race-badge .value { font-size: 22px; font-weight: 700; }
+  .race-badge .sub { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+
+  /* STATS */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+  .stat { background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 14px; padding: 22px 24px; }
+  .stat-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 10px; }
+  .stat-value { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+  .stat-value .unit { font-size: 14px; color: var(--text-dim); font-weight: 500; margin-left: 4px; }
+  .stat-sub { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+  /* CHARTS */
+  .charts { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 48px; }
+  .chart-card { background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 14px; padding: 24px; }
+  .chart-title { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px; }
+  .chart-sub { font-size: 12px; color: var(--text-mute); margin-bottom: 16px; }
+  .chart-box { width: 100%; height: 260px; }
+  .chart-full { grid-column: 1 / -1; }
+
+  /* PACES REFERENCE */
+  .paces { background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 14px; padding: 24px; margin-bottom: 48px; }
+  .paces h3 { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px; }
+  .pace-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .pace-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--bg-elev); border-radius: 8px; border-left: 3px solid var(--border); }
+  .pace-row.easy { border-left-color: var(--easy); }
+  .pace-row.long { border-left-color: var(--long); }
+  .pace-row.marathon { border-left-color: var(--marathon); }
+  .pace-row.threshold { border-left-color: var(--threshold); }
+  .pace-row.hmp { border-left-color: var(--hmp); }
+  .pace-row.cv { border-left-color: var(--cv); }
+  .pace-row.vo2 { border-left-color: var(--vo2); }
+  .pace-name { font-size: 12px; color: var(--text-dim); flex: 1; }
+  .pace-value { font-size: 13px; font-weight: 600; }
+
+  /* WEEKS */
+  .weeks { display: flex; flex-direction: column; gap: 16px; }
+  .week { background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 14px; overflow: hidden; }
+  .week-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid var(--border-soft); }
+  .week-title-block { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .week-num { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mute); }
+  .week-name { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .week-dates { font-size: 12px; color: var(--text-dim); }
+  .week-meta { display: flex; gap: 20px; }
+  .week-meta-item { text-align: right; }
+  .week-meta-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute); }
+  .week-meta-value { font-size: 16px; font-weight: 600; margin-top: 2px; }
+  .week-tag { display: inline-block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+  .week-tag.peak { background: rgba(248,113,113,0.15); color: #f87171; }
+  .week-tag.race { background: rgba(253,224,71,0.15); color: #fde047; }
+  .week-tag.taper { background: rgba(34,211,238,0.15); color: #22d3ee; }
+  .week-tag.build { background: rgba(251,146,60,0.15); color: #fb923c; }
+  .week-tag.reload { background: rgba(74,222,128,0.15); color: #4ade80; }
+
+  .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; }
+  .day { padding: 16px 14px; border-right: 1px solid var(--border-soft); min-height: 180px; display: flex; flex-direction: column; gap: 8px; position: relative; }
+  .day:last-child { border-right: none; }
+  .day.race-day { background: linear-gradient(180deg, rgba(253,224,71,0.05), transparent); }
+  .day.done { opacity: 0.55; }
+  .day-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .day-name { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mute); font-weight: 600; }
+  .day-date { font-size: 11px; color: var(--text-dim); font-weight: 500; }
+  .day-status { position: absolute; top: 14px; right: 14px; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+
+  .session { display: flex; flex-direction: column; gap: 6px; padding: 10px; border-radius: 8px; background: var(--bg-elev); border-left: 3px solid var(--rest); flex: 1; }
+  .session.easy { border-left-color: var(--easy); }
+  .session.long { border-left-color: var(--long); }
+  .session.threshold { border-left-color: var(--threshold); }
+  .session.hmp { border-left-color: var(--hmp); }
+  .session.cv { border-left-color: var(--cv); }
+  .session.vo2 { border-left-color: var(--vo2); }
+  .session.mixed { border-left-color: var(--marathon); }
+  .session.race { border-left-color: var(--race); background: linear-gradient(135deg, rgba(253,224,71,0.08), var(--bg-elev)); }
+  .session.rest { border-left-color: var(--rest); }
+
+  .session-type { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+  .session-type.easy { color: var(--easy); }
+  .session-type.long { color: var(--long); }
+  .session-type.threshold { color: var(--threshold); }
+  .session-type.hmp { color: var(--hmp); }
+  .session-type.cv { color: var(--cv); }
+  .session-type.vo2 { color: var(--vo2); }
+  .session-type.mixed { color: var(--marathon); }
+  .session-type.race { color: var(--race); }
+  .session-type.rest { color: var(--text-mute); }
+
+  .session-distance { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+  .session-detail { font-size: 11px; color: var(--text-dim); line-height: 1.45; }
+  .session-pace { font-size: 11px; color: var(--text); font-weight: 500; }
+
+  .rpe { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+  .rpe-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; position: relative; }
+  .rpe-fill { height: 100%; border-radius: 2px; }
+  .rpe-fill.r0 { background: var(--rest); }
+  .rpe-fill.r3, .rpe-fill.r4 { background: var(--easy); }
+  .rpe-fill.r5, .rpe-fill.r6 { background: var(--marathon); }
+  .rpe-fill.r7 { background: var(--threshold); }
+  .rpe-fill.r8 { background: var(--hmp); }
+  .rpe-fill.r9, .rpe-fill.r10 { background: var(--cv); }
+  .rpe-label { font-size: 10px; color: var(--text-mute); font-weight: 600; min-width: 32px; text-align: right; }
+
+  /* PRINCIPLES / DECISIONS */
+  .footer-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
+  .principle-card { background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 14px; padding: 24px; }
+  .principle-card h3 { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 14px; }
+  .principle-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .principle-card li { font-size: 14px; color: var(--text); padding-left: 20px; position: relative; line-height: 1.5; }
+  .principle-card li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+  .decision-card li::before { background: var(--race); }
+
+  /* LEGEND */
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; padding: 16px 20px; background: var(--bg-elev); border-radius: 10px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-dim); }
+  .legend-swatch { width: 10px; height: 10px; border-radius: 2px; }
+
+  @media (max-width: 1100px) {
+    .charts { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .pace-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-section { grid-template-columns: 1fr; }
+    .days { grid-template-columns: repeat(1, 1fr); }
+    .day { border-right: none; border-bottom: 1px solid var(--border-soft); min-height: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div>
+      <div class="brand"><span class="brand-dot"></span> Alexis · Half Marathon Block</div>
+      <h1>7 weeks to <span class="accent">sub-1:20</span></h1>
+      <p class="subtitle">10K tune-up · Oct 11 · target 37:30–38:00  <span style="color:var(--text-mute)">/</span>  HM A-race · Nov 15 · target 1:19:30 @ 3:47/km</p>
+    </div>
+    <div class="race-badge">
+      <div>
+        <div class="label">A-Race</div>
+        <div class="value">Nov 15</div>
+        <div class="sub">47 days out</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-label">Total block volume</div>
+      <div class="stat-value">458<span class="unit">km</span></div>
+      <div class="stat-sub">across 7 weeks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Peak week</div>
+      <div class="stat-value">84<span class="unit">km</span></div>
+      <div class="stat-sub">Week 4 · threshold volume</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Quality sessions</div>
+      <div class="stat-value">15<span class="unit">total</span></div>
+      <div class="stat-sub">incl. lab test · 2 races</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Longest run</div>
+      <div class="stat-value">22<span class="unit">km</span></div>
+      <div class="stat-sub">Week 4 · 8km @ HMP block</div>
+    </div>
+  </section>
+
+  <section class="charts">
+    <div class="chart-card">
+      <div class="chart-title">Weekly volume</div>
+      <div class="chart-sub">Total km per week · quality km highlighted</div>
+      <div id="chart-volume" class="chart-box"></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Long-run progression</div>
+      <div class="chart-sub">Peak 3 weeks out</div>
+      <div id="chart-long" class="chart-box"></div>
+    </div>
+    <div class="chart-card chart-full">
+      <div class="chart-title">Intensity distribution</div>
+      <div class="chart-sub">Session RPE across the block · one dot per run · higher = harder</div>
+      <div id="chart-rpe" class="chart-box" style="height:280px"></div>
+    </div>
+  </section>
+
+  <section class="paces">
+    <h3>Pace reference</h3>
+    <div class="pace-grid">
+      <div class="pace-row easy"><div class="pace-name">Easy</div><div class="pace-value mono">5:00–5:15/km</div></div>
+      <div class="pace-row long"><div class="pace-name">Long run</div><div class="pace-value mono">5:00–5:15/km</div></div>
+      <div class="pace-row marathon"><div class="pace-name">Marathon (M)</div><div class="pace-value mono">4:05/km</div></div>
+      <div class="pace-row hmp"><div class="pace-name">HM goal pace</div><div class="pace-value mono">3:47/km</div></div>
+      <div class="pace-row threshold"><div class="pace-name">Threshold (T)</div><div class="pace-value mono">3:45–3:50/km</div></div>
+      <div class="pace-row cv"><div class="pace-name">10K / CV</div><div class="pace-value mono">3:38–3:42/km</div></div>
+      <div class="pace-row vo2"><div class="pace-name">VO2 (I)</div><div class="pace-value mono">3:20–3:25/km</div></div>
+      <div class="pace-row"><div class="pace-name">Strides</div><div class="pace-value mono">~3:00/km · 100m</div></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--rest)"></span>Rest</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--easy)"></span>Easy</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--long)"></span>Long</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--marathon)"></span>Mixed / M-pace</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--threshold)"></span>Threshold</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--hmp)"></span>HM pace</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--cv)"></span>10K / CV</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--race)"></span>Race</div>
+    </div>
+  </section>
+
+  <section class="weeks" id="weeks"></section>
+
+  <section class="footer-section">
+    <div class="principle-card">
+      <h3>Guiding principles</h3>
+      <ul>
+        <li><strong>Easy = actually easy.</strong> 5:00–5:15/km, no drift. Every fitness gain comes from the quality sessions — easy runs exist to let you execute them.</li>
+        <li><strong>Two quality days per week</strong> from Week 3 onwards (Tue + Thu). Week 1 is a single-session reintroduction; Week 2 is race-oriented.</li>
+        <li><strong>Threshold-heavy, not VO2-heavy.</strong> HM PR comes from lifting T-pace, not chasing 400s. VO2 work introduced only in Week 4+.</li>
+        <li><strong>Strides on easy days</strong> — 5–6 × 100 m fast. Free adaptation for running economy, no injury risk.</li>
+        <li><strong>Long-run progression peaks 3 weeks out.</strong> Week 4 (22km w/ HMP block) is the aerobic-specific peak.</li>
+      </ul>
+    </div>
+    <div class="principle-card decision-card">
+      <h3>Decision points</h3>
+      <ul>
+        <li><strong>✓ Tue Sep 29 · 5×1000 · PASSED</strong> — Ran 3:47 avg (target was 3:50), HR 187 (low-Z4), RPE 6. HMP feels holdable. Sub-1:20 gained confidence.</li>
+        <li><strong>Sun Oct 11 · 10K race</strong> — 37:30–38:00 finishing "could hold that for 5 km more" = sub-1:20 is real.</li>
+        <li><strong>Tue Oct 28 · 3×3km @ HMP</strong> — the predictor. Clean execution at 3:47 = Nov 15 is on. If you can only do 3:52, race for 1:21.</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const WEEKS = [
+  {
+    n: 1, name: 'Wake-up + diagnostic', tag: {label:'BUILD', cls:'build'},
+    dates: 'Sep 28 → Oct 4', vol: 68, quality: 12,
+    days: [
+      { d:'Mon', date:'Sep 28', done:true, type:'easy', dist:8.6, title:'Easy', detail:'5:06/km avg', rpe:4 },
+      { d:'Tue', date:'Sep 29', done:true, type:'threshold', dist:11.8, title:'Diagnostic ✓ passed', detail:'Splits: 3:47 · 3:47 · 3:47 · 3:46 · 3:49 · avg HR 187 (Z4) · RPE 6/10 · ran at HMP not T', rpe:6 },
+      { d:'Wed', date:'Sep 30', done:true, type:'easy', dist:6.9, title:'Recup ✓ (trimmed)', detail:'6.9km @ 5:18/km · no strides', rpe:3 },
+      { d:'Thu', date:'Oct 1', done:true, type:'rest', dist:0, title:'Rest ✓ (swapped w/ Fri)', detail:'No run', rpe:0 },
+      { d:'Fri', date:'Oct 2', done:true, type:'easy', dist:10.8, title:'Easy ✓ (moved from Thu)', detail:'10.8km @ 5:26/km evening', rpe:4 },
+      { d:'Sat', date:'Oct 3', done:true, type:'easy', dist:10.7, title:'Run trio ✓', detail:'10.7km @ 4:52/km · fast easy, likely w/ pickups', rpe:5 },
+      { d:'Sun', date:'Oct 4', done:true, type:'long', dist:18.8, title:'Long run ✓ nailed', detail:'15km @ 5:03 (HR 156) + 3km @ 4:03 (HR 182, cad 93) · 19 Strava golds', rpe:6 },
+    ]
+  },
+  {
+    n: 2, name: 'Race week · 10K tune-up', tag: {label:'RACE', cls:'race'},
+    dates: 'Oct 5 → Oct 11', vol: 51, quality: 11,
+    days: [
+      { d:'Mon', date:'Oct 5', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Tue', date:'Oct 6', type:'hmp', dist:11, title:'Sharpener', detail:'3km WU · 3×2000 @ 3:48 · 2\' jog · 4×100m strides · 1km CD', rpe:8 },
+      { d:'Wed', date:'Oct 7', type:'easy', dist:10, title:'Easy', rpe:4 },
+      { d:'Thu', date:'Oct 8', type:'easy', dist:11, title:'Easy + strides', detail:'11km + 5×100m strides', rpe:4 },
+      { d:'Fri', date:'Oct 9', type:'easy', dist:5, title:'Very easy + strides', detail:'5km + 4×100m strides', rpe:3 },
+      { d:'Sat', date:'Oct 10', type:'rest', dist:0, title:'Shakeout or rest', detail:'20\' jog max', rpe:0 },
+      { d:'Sun', date:'Oct 11', type:'race', dist:14, title:'10K RACE + WD', detail:'2km WU · 10K race (target 37:30–38:00 · km1: 3:50 · km2–5: 3:47 · km6–8: 3:46 · km9–10: empty) · 2km CD', rpe:9 },
+    ]
+  },
+  {
+    n: 3, name: 'Recovery + reload', tag: {label:'RELOAD', cls:'reload'},
+    dates: 'Oct 12 → Oct 18', vol: 71, quality: 21,
+    days: [
+      { d:'Mon', date:'Oct 12', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Tue', date:'Oct 13', type:'easy', dist:10, title:'Easy', rpe:4 },
+      { d:'Wed', date:'Oct 14', type:'threshold', dist:11, title:'Light threshold', detail:'2km WU · 6×3\' @ T (3:47) · 90" jog · 2km CD', rpe:7 },
+      { d:'Thu', date:'Oct 15', type:'easy', dist:11, title:'Easy + strides', detail:'11km + 5×100m strides', rpe:4 },
+      { d:'Fri', date:'Oct 16', type:'threshold', dist:10, title:'Threshold cruise', detail:'2km WU · 4×1km @ T (3:47) · 90" jog · 2km CD', rpe:7 },
+      { d:'Sat', date:'Oct 17', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
+      { d:'Sun', date:'Oct 18', type:'long', dist:19, title:'Long run', detail:'15km easy + 4km @ M (4:05)', rpe:6 },
+    ]
+  },
+  {
+    n: 4, name: 'Threshold volume', tag: {label:'PEAK', cls:'peak'},
+    dates: 'Oct 19 → Oct 25', vol: 84, quality: 23,
+    days: [
+      { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Tue', date:'Oct 20', type:'threshold', dist:14, title:'Big threshold', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD', rpe:8 },
+      { d:'Wed', date:'Oct 21', type:'easy', dist:12, title:'Easy', rpe:4 },
+      { d:'Thu', date:'Oct 22', type:'cv', dist:11, title:'CV session', detail:'3km WU · 6×800 @ 3:38 · 90" jog · 2km CD', rpe:8 },
+      { d:'Fri', date:'Oct 23', type:'easy', dist:10, title:'Very easy + strides', detail:'10km + 5×100m strides', rpe:3 },
+      { d:'Sat', date:'Oct 24', type:'easy', dist:15, title:'Easy medium-long', detail:'Steady aerobic, no intervals', rpe:5 },
+      { d:'Sun', date:'Oct 25', type:'long', dist:22, title:'Long w/ HMP block', detail:'12km easy + 8km @ HMP (3:47) continuous + 2km CD', rpe:9 },
+    ]
+  },
+  {
+    n: 5, name: 'HM-specific + lab test', tag: {label:'PEAK', cls:'peak'},
+    dates: 'Oct 26 → Nov 1', vol: 68, quality: 25,
+    days: [
+      { d:'Mon', date:'Oct 26', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Tue', date:'Oct 27', type:'hmp', dist:15, title:'KEY · 3×3km @ HMP', detail:'3km WU · 3×3km @ 3:47 · 3\' jog · 2km CD · the predictor', rpe:8 },
+      { d:'Wed', date:'Oct 28', type:'easy', dist:10, title:'Easy', rpe:4 },
+      { d:'Thu', date:'Oct 29', type:'easy', dist:8, title:'Pre-test shakeout', detail:'8km easy + 4×100m strides · nervous system primed, legs fresh', rpe:3 },
+      { d:'Fri', date:'Oct 30', type:'cv', dist:10, title:'🧪 LAB · VO2max + lactate', detail:'Ramp to exhaustion + stepped lactate protocol · ~45-60min at lab · fuel normally, no added caffeine', rpe:10 },
+      { d:'Sat', date:'Oct 31', type:'easy', dist:5, title:'Very easy OR rest', detail:'5km very easy, protect Sunday · skip entirely if legs trashed', rpe:2 },
+      { d:'Sun', date:'Nov 1', type:'long', dist:20, title:'Progression LR', detail:'12km easy → 6km @ M → 2km @ HMP', rpe:7 },
+    ]
+  },
+  {
+    n: 6, name: 'Sharpen', tag: {label:'BUILD', cls:'build'},
+    dates: 'Nov 2 → Nov 8', vol: 72, quality: 24,
+    days: [
+      { d:'Mon', date:'Nov 2', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Tue', date:'Nov 3', type:'cv', dist:11, title:'CV sharpener', detail:'3km WU · 5×1km @ 3:40 · 90" jog · 2km CD', rpe:8 },
+      { d:'Wed', date:'Nov 4', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 6×100m strides', rpe:4 },
+      { d:'Thu', date:'Nov 5', type:'hmp', dist:13, title:'Last big HMP', detail:'3km WU · 2×4km @ HMP (3:47) · 3\' jog · 2km CD', rpe:8 },
+      { d:'Fri', date:'Nov 6', type:'easy', dist:10, title:'Easy', rpe:4 },
+      { d:'Sat', date:'Nov 7', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
+      { d:'Sun', date:'Nov 8', type:'long', dist:18, title:'LR w/ HMP block', detail:'7km easy + 6km @ HMP + 5km easy', rpe:8 },
+    ]
+  },
+  {
+    n: 7, name: 'Taper + HM race', tag: {label:'TAPER', cls:'taper'},
+    dates: 'Nov 9 → Nov 15', vol: 44, quality: 8,
+    days: [
+      { d:'Mon', date:'Nov 9', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Tue', date:'Nov 10', type:'hmp', dist:8, title:'HMP primer', detail:'2km WU · 4×1km @ HMP · 2\' jog · 6×100m strides · 1km CD', rpe:6 },
+      { d:'Wed', date:'Nov 11', type:'easy', dist:8, title:'Easy', rpe:3 },
+      { d:'Thu', date:'Nov 12', type:'easy', dist:6, title:'Easy + openers', detail:'6km + 4×200m @ 10K pace', rpe:4 },
+      { d:'Fri', date:'Nov 13', type:'easy', dist:4, title:'Very easy + strides', detail:'4km + 4×100m strides', rpe:3 },
+      { d:'Sat', date:'Nov 14', type:'rest', dist:0, title:'Full rest', rpe:0 },
+      { d:'Sun', date:'Nov 15', type:'race', dist:21.1, title:'HM RACE · sub-1:20', detail:'km1–3: 3:50 · km4–10: 3:47 · km11–15: 3:46 · km16–18: 3:45 · km19+: empty', rpe:10 },
+    ]
+  },
+];
+
+// Render weeks
+const weeksEl = document.getElementById('weeks');
+WEEKS.forEach(w => {
+  const weekEl = document.createElement('div');
+  weekEl.className = 'week';
+  const daysHtml = w.days.map(day => {
+    const rpeCls = day.rpe === 0 ? 'r0' : `r${Math.min(10, day.rpe)}`;
+    const rpeWidth = day.rpe === 0 ? '0%' : `${day.rpe * 10}%`;
+    return `
+      <div class="day ${day.type === 'race' ? 'race-day' : ''} ${day.done ? 'done' : ''}">
+        <div class="day-header">
+          <div>
+            <div class="day-name">${day.d}</div>
+            <div class="day-date">${day.date}</div>
+          </div>
+          ${day.done ? '<div class="day-status">✓ Done</div>' : ''}
+        </div>
+        <div class="session ${day.type}">
+          <div class="session-type ${day.type}">${day.type === 'rest' ? 'Rest' : day.type.toUpperCase()}</div>
+          <div class="session-distance">${day.dist === 0 ? '—' : `${day.dist} km`}</div>
+          <div class="session-detail"><strong style="color:var(--text)">${day.title}</strong>${day.detail ? '<br>' + day.detail : ''}</div>
+          ${day.rpe > 0 ? `
+          <div class="rpe">
+            <div class="rpe-bar"><div class="rpe-fill ${rpeCls}" style="width:${rpeWidth}"></div></div>
+            <div class="rpe-label mono">RPE ${day.rpe}</div>
+          </div>` : `
+          <div class="rpe">
+            <div class="rpe-bar"></div>
+            <div class="rpe-label mono">—</div>
+          </div>`}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  weekEl.innerHTML = `
+    <div class="week-header">
+      <div class="week-title-block">
+        <span class="week-num">Week ${w.n}</span>
+        <span class="week-name">${w.name}</span>
+        <span class="week-dates">${w.dates}</span>
+        <span class="week-tag ${w.tag.cls}">${w.tag.label}</span>
+      </div>
+      <div class="week-meta">
+        <div class="week-meta-item">
+          <div class="week-meta-label">Volume</div>
+          <div class="week-meta-value mono">${w.vol} km</div>
+        </div>
+        <div class="week-meta-item">
+          <div class="week-meta-label">Quality</div>
+          <div class="week-meta-value mono">${w.quality} km</div>
+        </div>
+      </div>
+    </div>
+    <div class="days">${daysHtml}</div>
+  `;
+  weeksEl.appendChild(weekEl);
+});
+
+// Chart config
+const chartText = { color: '#8b96a5', fontFamily: 'Inter, sans-serif' };
+const gridConfig = { left: 40, right: 20, top: 20, bottom: 32, containerLabel: true };
+
+// Weekly volume chart
+const volEl = echarts.init(document.getElementById('chart-volume'), null, { renderer: 'svg' });
+volEl.setOption({
+  textStyle: chartText,
+  grid: gridConfig,
+  tooltip: { trigger: 'axis', backgroundColor: '#161b22', borderColor: '#232a34', textStyle: { color: '#e6edf3' } },
+  xAxis: {
+    type: 'category',
+    data: WEEKS.map(w => `W${w.n}`),
+    axisLine: { lineStyle: { color: '#232a34' } },
+    axisLabel: { color: '#8b96a5' },
+  },
+  yAxis: {
+    type: 'value',
+    axisLine: { show: false },
+    axisTick: { show: false },
+    splitLine: { lineStyle: { color: '#1c222b' } },
+    axisLabel: { color: '#8b96a5', formatter: '{value} km' },
+  },
+  series: [
+    {
+      name: 'Easy km',
+      type: 'bar',
+      stack: 'total',
+      data: WEEKS.map(w => w.vol - w.quality),
+      itemStyle: { color: '#4ade80', borderRadius: [0, 0, 0, 0] },
+      barWidth: '55%',
+    },
+    {
+      name: 'Quality km',
+      type: 'bar',
+      stack: 'total',
+      data: WEEKS.map(w => w.quality),
+      itemStyle: { color: '#fb923c', borderRadius: [6, 6, 0, 0] },
+    },
+  ],
+  legend: {
+    data: ['Easy km', 'Quality km'],
+    textStyle: { color: '#8b96a5' },
+    top: 0,
+    right: 0,
+  },
+});
+
+// Long-run progression
+const longRuns = WEEKS.map(w => {
+  const longest = Math.max(...w.days.map(d => d.type === 'long' || d.type === 'race' ? d.dist : 0));
+  return { w: `W${w.n}`, dist: longest };
+});
+const longEl = echarts.init(document.getElementById('chart-long'), null, { renderer: 'svg' });
+longEl.setOption({
+  textStyle: chartText,
+  grid: gridConfig,
+  tooltip: { trigger: 'axis', backgroundColor: '#161b22', borderColor: '#232a34', textStyle: { color: '#e6edf3' } },
+  xAxis: {
+    type: 'category',
+    data: longRuns.map(r => r.w),
+    axisLine: { lineStyle: { color: '#232a34' } },
+    axisLabel: { color: '#8b96a5' },
+  },
+  yAxis: {
+    type: 'value',
+    axisLine: { show: false },
+    axisTick: { show: false },
+    splitLine: { lineStyle: { color: '#1c222b' } },
+    axisLabel: { color: '#8b96a5', formatter: '{value} km' },
+  },
+  series: [{
+    type: 'line',
+    data: longRuns.map(r => r.dist),
+    smooth: true,
+    symbolSize: 10,
+    lineStyle: { color: '#22d3ee', width: 3 },
+    itemStyle: { color: '#22d3ee' },
+    areaStyle: {
+      color: {
+        type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+        colorStops: [{ offset: 0, color: 'rgba(34,211,238,0.4)' }, { offset: 1, color: 'rgba(34,211,238,0)' }],
+      },
+    },
+    markPoint: {
+      data: [{ type: 'max', name: 'Peak' }],
+      itemStyle: { color: '#fb923c' },
+      label: { color: '#0b0d10', fontWeight: 700 },
+    },
+  }],
+});
+
+// RPE scatter
+const rpeData = [];
+const rpeColors = {
+  rest: '#3a4250', easy: '#4ade80', long: '#22d3ee', threshold: '#fb923c',
+  hmp: '#f87171', cv: '#ef4444', vo2: '#e879f9', mixed: '#fbbf24', race: '#fde047',
+};
+WEEKS.forEach((w, wi) => {
+  w.days.forEach((day, di) => {
+    if (day.rpe > 0) {
+      rpeData.push({
+        value: [wi * 7 + di, day.rpe],
+        itemStyle: { color: rpeColors[day.type] || '#8b96a5' },
+        symbolSize: day.type === 'race' ? 22 : 10 + day.rpe,
+        day,
+      });
+    }
+  });
+});
+const rpeEl = echarts.init(document.getElementById('chart-rpe'), null, { renderer: 'svg' });
+rpeEl.setOption({
+  textStyle: chartText,
+  grid: { left: 50, right: 20, top: 20, bottom: 40, containerLabel: true },
+  tooltip: {
+    trigger: 'item',
+    backgroundColor: '#161b22', borderColor: '#232a34', textStyle: { color: '#e6edf3' },
+    formatter: p => `<b>${p.data.day.d} ${p.data.day.date}</b><br>${p.data.day.title}<br><span style="color:#8b96a5">${p.data.day.detail || ''}</span><br>RPE <b>${p.data.day.rpe}/10</b>`,
+  },
+  xAxis: {
+    type: 'value',
+    min: -0.5,
+    max: WEEKS.length * 7 - 0.5,
+    axisLine: { lineStyle: { color: '#232a34' } },
+    splitLine: { show: false },
+    axisLabel: {
+      color: '#8b96a5',
+      formatter: v => {
+        const wi = Math.floor(v / 7);
+        return v % 7 === 3 && WEEKS[wi] ? `Week ${WEEKS[wi].n}` : '';
+      },
+      interval: 0,
+    },
+    axisTick: { show: false },
+  },
+  yAxis: {
+    type: 'value',
+    min: 0, max: 10,
+    interval: 2,
+    axisLine: { show: false },
+    axisTick: { show: false },
+    splitLine: { lineStyle: { color: '#1c222b' } },
+    axisLabel: { color: '#8b96a5', formatter: 'RPE {value}' },
+  },
+  series: [{
+    type: 'scatter',
+    data: rpeData,
+    emphasis: { scale: 1.3 },
+  }],
+});
+
+window.addEventListener('resize', () => {
+  volEl.resize();
+  longEl.resize();
+  rpeEl.resize();
+});
+</script>
+</body>
+</html>
