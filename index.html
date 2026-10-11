@@ -189,7 +189,7 @@
   <section class="stats">
     <div class="stat">
       <div class="stat-label">Total block volume</div>
-      <div class="stat-value">458<span class="unit">km</span></div>
+      <div class="stat-value">456<span class="unit">km</span></div>
       <div class="stat-sub">across 7 weeks</div>
     </div>
     <div class="stat">
@@ -268,7 +268,7 @@
       <h3>Decision points</h3>
       <ul>
         <li><strong>✓ Tue Sep 29 · 5×1000 · PASSED</strong> — Ran 3:47 avg (target was 3:50), HR 187 (low-Z4), RPE 6. HMP feels holdable. Sub-1:20 gained confidence.</li>
-        <li><strong>Sun Oct 11 · 10K race</strong> — 37:30–38:00 finishing "could hold that for 5 km more" = sub-1:20 is real.</li>
+        <li><strong>~ Sun Oct 11 · 10K · 39:40 · NOT PASSED ON THE CLOCK</strong> — Hilly course (118m D+). Power says the effort was ~37:30 flat-equivalent, but first 2 km ran ~10% over race-average power, then a fade from km 5. Fitness is roughly there; pacing is the #1 risk. Gate 3 + lab test decide the HM target.</li>
         <li><strong>Tue Oct 28 · 3×3km @ HMP</strong> — the predictor. Clean execution at 3:47 = Nov 15 is on. If you can only do 3:52, race for 1:21.</li>
       </ul>
     </div>
@@ -293,15 +293,15 @@ const WEEKS = [
   },
   {
     n: 2, name: 'Race week · 10K tune-up', tag: {label:'RACE', cls:'race'},
-    dates: 'Oct 5 → Oct 11', vol: 51, quality: 11,
+    dates: 'Oct 5 → Oct 11', vol: 49, quality: 21,
     days: [
-      { d:'Mon', date:'Oct 5', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Mon', date:'Oct 5', done:true, type:'rest', dist:0, title:'Rest ✓', rpe:0 },
       { d:'Tue', date:'Oct 6', done:true, type:'hmp', dist:11.4, title:'Sharpener ✓ (ran hot)', detail:'Splits: 3:40 · 3:41 · 3:44 (target 3:48) · HR 187 · 22 Strava golds · ran CV not HMP — careful km1 on Sunday', rpe:8 },
       { d:'Wed', date:'Oct 7', done:true, type:'easy', dist:10.9, title:'Easy ✓', detail:'10.9km @ 5:04/km · strides done', rpe:4 },
       { d:'Thu', date:'Oct 8', done:true, type:'easy', dist:10, title:'Easy ✓ (evening)', detail:'10km @ 5:24/km · race-week easy, strides done', rpe:3 },
-      { d:'Fri', date:'Oct 9', type:'easy', dist:5, title:'Very easy + strides', detail:'5km + 4×100m strides', rpe:3 },
-      { d:'Sat', date:'Oct 10', type:'rest', dist:0, title:'Shakeout or rest', detail:'20\' jog max', rpe:0 },
-      { d:'Sun', date:'Oct 11', type:'race', dist:14, title:'10K RACE + WD', detail:'2km WU · 10K race (target 37:30–38:00 · km1: 3:50 · km2–5: 3:47 · km6–8: 3:46 · km9–10: empty) · 2km CD', rpe:9 },
+      { d:'Fri', date:'Oct 9', done:true, type:'rest', dist:0, title:'Rest ✓ (swapped w/ Sat)', detail:'No run', rpe:0 },
+      { d:'Sat', date:'Oct 10', done:true, type:'easy', dist:4.4, title:'Activation ✓', detail:'4.4km @ 5:01/km · strides', rpe:3 },
+      { d:'Sun', date:'Oct 11', done:true, type:'race', dist:12.6, title:'10K Fontenay · 39:40', detail:'Hilly course (118m D+) · halves 18:59 / 20:10 · km1-2 at 346-352W, HR 196 on km2 climb · faded from km5 · power ≈ 37:30 flat-equivalent', rpe:9 },
     ]
   },
   {
