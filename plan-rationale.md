@@ -83,14 +83,14 @@ User chose aggressive targets with explicit understanding that:
 
 ```
 Week 1 · Sep 28 → Oct 4 · Wake-up + diagnostic ·        68 km · 1 quality
-Week 2 · Oct 5  → Oct 11 · Race week · 10K tune-up ·    51 km · 1 session + race
-Week 3 · Oct 12 → Oct 18 · Recovery + reload ·          71 km · 2 quality
-Week 4 · Oct 19 → Oct 25 · Threshold volume (PEAK) ·    84 km · 3 quality
+Week 2 · Oct 5  → Oct 11 · Race week · 10K tune-up ·    49 km · 1 session + race
+Week 3 · Oct 12 → Oct 18 · Pre-travel load ·            75 km · 1 quality + HMP long run
+Week 4 · Oct 19 → Oct 25 · Business travel + key LR ·   70 km · 1 optional CV + HMP long run
 Week 5 · Oct 26 → Nov 1  · HM-specific + lab test ·     68 km · 2 quality + lab
 Week 6 · Nov 2  → Nov 8  · Sharpen ·                    72 km · 3 quality
 Week 7 · Nov 9  → Nov 15 · Taper + HM race ·            44 km · 1 session + race
                                                        ────────────────────────
-                                                       458 km total
+                                                       446 km total
 ```
 
 ### Design philosophy
@@ -129,7 +129,7 @@ Honest off-ramps built into the block to recalibrate targets based on reality, n
 | Gate | Date | Session | Pass criterion | Result |
 |---|---|---|---|---|
 | 1 | **Tue Sep 29** | 5×1000 @ 3:50 diagnostic | Hold 3:50, RPE ≤ 8 | ✅ **PASSED** — ran 3:47 avg (HMP) at RPE 6, HR 187 (low-Z4) |
-| 2 | Sun Oct 11 | 10K tune-up race | Finish 37:30–38:00 feeling could hold 5 km more | pending |
+| 2 | Sun Oct 11 | 10K tune-up race | Finish 37:30–38:00 feeling could hold 5 km more | ✗ **Not passed on the clock** — 39:40 on a hilly course (118 m D+). Power ≈ 37:30 flat-equivalent, but km 1–2 ran ~10% over race-average power and faded from km 5. Pacing flagged as #1 risk; HM power cap planned |
 | 3 | Tue Oct 28 | 3×3 km @ HMP KEY | Clean execution at 3:47 | pending |
 
 Fallback targets if gates fail:
@@ -150,6 +150,7 @@ Fallback targets if gates fail:
 ### Mid-block adjustments
 - **Oct 25 session rebuilt** — original 24 km LR with 10 km continuous @ HMP was overcooked (equivalent to HM race effort inside a long run). Changed to 22 km with 8 km continuous @ HMP, RPE 9. Rationale: internal consistency with Week 5 KEY session; Pfitzinger-style benchmark.
 - **Week 5 reorganized for lab test** — Thursday mixed session dropped to pre-test shakeout; Fri lab test treated as RPE 10 quality session; Saturday slashed from 13 km → 5 km; Sunday LR trimmed from 22 → 20 km. Volume drops 85 → 68 km, trade justified by calibration value of lab data.
+- **Weeks 3–4 swapped for business travel (Oct 19–23)** — athlete can run easy daily but park/treadmill access is uncertain. The 4×2 km @ HMP moved from Tue Oct 20 to Thu Oct 15 (4 days post-10K, with a move-to-Friday guardrail). The two light threshold sessions in Week 3 were dropped. The Sun Oct 18 long run was upgraded from 4 km @ M to 5 km @ HMP, which also serves as a pacing rehearsal (first km 3:50, ~310 W cap). The Week 4 CV session (6×800) is kept as optional. Easy days during travel were shortened, and the Sun Oct 25 22 km / 8 km HMP session is unchanged. Net cost: ~14 km over the two weeks. Week 3 becomes 75 km, Week 4 70 km.
 
 ---
 

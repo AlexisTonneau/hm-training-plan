@@ -189,13 +189,13 @@
   <section class="stats">
     <div class="stat">
       <div class="stat-label">Total block volume</div>
-      <div class="stat-value">456<span class="unit">km</span></div>
+      <div class="stat-value">446<span class="unit">km</span></div>
       <div class="stat-sub">across 7 weeks</div>
     </div>
     <div class="stat">
       <div class="stat-label">Peak week</div>
-      <div class="stat-value">84<span class="unit">km</span></div>
-      <div class="stat-sub">Week 4 · threshold volume</div>
+      <div class="stat-value">75<span class="unit">km</span></div>
+      <div class="stat-sub">Week 3 · pre-travel load</div>
     </div>
     <div class="stat">
       <div class="stat-label">Quality sessions</div>
@@ -305,28 +305,28 @@ const WEEKS = [
     ]
   },
   {
-    n: 3, name: 'Recovery + reload', tag: {label:'RELOAD', cls:'reload'},
-    dates: 'Oct 12 → Oct 18', vol: 71, quality: 21,
+    n: 3, name: 'Pre-travel load', tag: {label:'BUILD', cls:'build'},
+    dates: 'Oct 12 → Oct 18', vol: 75, quality: 19,
     days: [
-      { d:'Mon', date:'Oct 12', type:'rest', dist:0, title:'Rest', rpe:0 },
-      { d:'Tue', date:'Oct 13', type:'easy', dist:10, title:'Easy', rpe:4 },
-      { d:'Wed', date:'Oct 14', type:'threshold', dist:11, title:'Light threshold', detail:'2km WU · 6×3\' @ T (3:47) · 90" jog · 2km CD', rpe:7 },
-      { d:'Thu', date:'Oct 15', type:'easy', dist:11, title:'Easy + strides', detail:'11km + 5×100m strides', rpe:4 },
-      { d:'Fri', date:'Oct 16', type:'threshold', dist:10, title:'Threshold cruise', detail:'2km WU · 4×1km @ T (3:47) · 90" jog · 2km CD', rpe:7 },
+      { d:'Mon', date:'Oct 12', type:'rest', dist:0, title:'Rest', detail:'Day after the 10K', rpe:0 },
+      { d:'Tue', date:'Oct 13', type:'easy', dist:10, title:'Easy', detail:'Race flush, no strides', rpe:3 },
+      { d:'Wed', date:'Oct 14', type:'easy', dist:11, title:'Easy + strides', detail:'11km + 5×100m strides', rpe:4 },
+      { d:'Thu', date:'Oct 15', type:'threshold', dist:14, title:'Big threshold (from Oct 20)', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD · hold 3:47-3:49, not 3:40 · if legs still sore Wed → move to Fri', rpe:8 },
+      { d:'Fri', date:'Oct 16', type:'easy', dist:10, title:'Easy', rpe:4 },
       { d:'Sat', date:'Oct 17', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Sun', date:'Oct 18', type:'long', dist:19, title:'Long run', detail:'15km easy + 4km @ M (4:05)', rpe:6 },
+      { d:'Sun', date:'Oct 18', type:'long', dist:20, title:'Long w/ HMP block', detail:'15km easy + 5km @ HMP · first HMP km at 3:50, cap ~310W · rehearsal for Oct 25', rpe:8 },
     ]
   },
   {
-    n: 4, name: 'Threshold volume', tag: {label:'PEAK', cls:'peak'},
-    dates: 'Oct 19 → Oct 25', vol: 84, quality: 23,
+    n: 4, name: 'Business travel + key long run', tag: {label:'TRAVEL', cls:'reload'},
+    dates: 'Oct 19 → Oct 25', vol: 70, quality: 19,
     days: [
-      { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest', rpe:0 },
-      { d:'Tue', date:'Oct 20', type:'threshold', dist:14, title:'Big threshold', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD', rpe:8 },
-      { d:'Wed', date:'Oct 21', type:'easy', dist:12, title:'Easy', rpe:4 },
-      { d:'Thu', date:'Oct 22', type:'cv', dist:11, title:'CV session', detail:'3km WU · 6×800 @ 3:38 · 90" jog · 2km CD', rpe:8 },
-      { d:'Fri', date:'Oct 23', type:'easy', dist:10, title:'Very easy + strides', detail:'10km + 5×100m strides', rpe:3 },
-      { d:'Sat', date:'Oct 24', type:'easy', dist:15, title:'Easy medium-long', detail:'Steady aerobic, no intervals', rpe:5 },
+      { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest / travel', rpe:0 },
+      { d:'Tue', date:'Oct 20', type:'easy', dist:9, title:'Easy', detail:'30-50\' whatever fits the day', rpe:3 },
+      { d:'Wed', date:'Oct 21', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
+      { d:'Thu', date:'Oct 22', type:'cv', dist:11, title:'CV session (optional)', detail:'3km WU · 6×800 @ 3:38 · 90" jog · 2km CD · only if park/treadmill available, otherwise 8km easy', rpe:8 },
+      { d:'Fri', date:'Oct 23', type:'easy', dist:6, title:'Easy or rest', detail:'Travel back · skip if the day is packed', rpe:3 },
+      { d:'Sat', date:'Oct 24', type:'easy', dist:12, title:'Easy', detail:'Steady aerobic, no intervals', rpe:4 },
       { d:'Sun', date:'Oct 25', type:'long', dist:22, title:'Long w/ HMP block', detail:'12km easy + 8km @ HMP (3:47) continuous + 2km CD', rpe:9 },
     ]
   },
