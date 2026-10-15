@@ -189,17 +189,17 @@
   <section class="stats">
     <div class="stat">
       <div class="stat-label">Total block volume</div>
-      <div class="stat-value">446<span class="unit">km</span></div>
+      <div class="stat-value">447<span class="unit">km</span></div>
       <div class="stat-sub">across 7 weeks</div>
     </div>
     <div class="stat">
       <div class="stat-label">Peak week</div>
-      <div class="stat-value">75<span class="unit">km</span></div>
-      <div class="stat-sub">Week 3 · pre-travel load</div>
+      <div class="stat-value">74<span class="unit">km</span></div>
+      <div class="stat-sub">Week 3 · reload + big threshold</div>
     </div>
     <div class="stat">
       <div class="stat-label">Quality sessions</div>
-      <div class="stat-value">15<span class="unit">total</span></div>
+      <div class="stat-value">13<span class="unit">total</span></div>
       <div class="stat-sub">incl. lab test · 2 races</div>
     </div>
     <div class="stat">
@@ -269,7 +269,7 @@
       <ul>
         <li><strong>✓ Tue Sep 29 · 5×1000 · PASSED</strong> — Ran 3:47 avg (target was 3:50), HR 187 (low-Z4), RPE 6. HMP feels holdable. Sub-1:20 gained confidence.</li>
         <li><strong>~ Sun Oct 11 · 10K · 39:40 · NOT PASSED ON THE CLOCK</strong> — Hilly course (118m D+). Power says the effort was ~37:30 flat-equivalent, but first 2 km ran ~10% over race-average power, then a fade from km 5. Fitness is roughly there; pacing is the #1 risk. Gate 3 + lab test decide the HM target.</li>
-        <li><strong>Tue Oct 28 · 3×3km @ HMP</strong> — the predictor. Clean execution at 3:47 = Nov 15 is on. If you can only do 3:52, race for 1:21.</li>
+        <li><strong>Sat Oct 24 · 22km w/ 8km continuous @ HMP</strong> — the predictor (replaces the 3×3km, moved for travel). Clean 3:47 through km 8 = Nov 15 is on. If you can only hold 3:52, race for 1:21.</li>
       </ul>
     </div>
   </section>
@@ -305,39 +305,39 @@ const WEEKS = [
     ]
   },
   {
-    n: 3, name: 'Pre-travel load', tag: {label:'BUILD', cls:'build'},
-    dates: 'Oct 12 → Oct 18', vol: 75, quality: 19,
+    n: 3, name: 'Reload + big threshold', tag: {label:'BUILD', cls:'build'},
+    dates: 'Oct 12 → Oct 18', vol: 74, quality: 18,
     days: [
-      { d:'Mon', date:'Oct 12', type:'rest', dist:0, title:'Rest', detail:'Day after the 10K', rpe:0 },
-      { d:'Tue', date:'Oct 13', type:'easy', dist:10, title:'Easy', detail:'Race flush, no strides', rpe:3 },
-      { d:'Wed', date:'Oct 14', type:'easy', dist:11, title:'Easy + strides', detail:'11km + 5×100m strides', rpe:4 },
-      { d:'Thu', date:'Oct 15', type:'threshold', dist:14, title:'Big threshold (from Oct 20)', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD · hold 3:47-3:49, not 3:40 · if legs still sore Wed → move to Fri', rpe:8 },
+      { d:'Mon', date:'Oct 12', done:true, type:'rest', dist:0, title:'Rest ✓', detail:'Day after the 10K', rpe:0 },
+      { d:'Tue', date:'Oct 13', done:true, type:'easy', dist:10.1, title:'Easy ✓', detail:'10.1km @ 5:07/km', rpe:3 },
+      { d:'Wed', date:'Oct 14', done:true, type:'easy', dist:10.8, title:'Easy ✓', detail:'10.8km @ 4:55/km · a touch quick for easy', rpe:4 },
+      { d:'Thu', date:'Oct 15', type:'threshold', dist:14, title:'Big threshold', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD · hold 3:47-3:49, not 3:40', rpe:8 },
       { d:'Fri', date:'Oct 16', type:'easy', dist:10, title:'Easy', rpe:4 },
       { d:'Sat', date:'Oct 17', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Sun', date:'Oct 18', type:'long', dist:20, title:'Long w/ HMP block', detail:'15km easy + 5km @ HMP · first HMP km at 3:50, cap ~310W · rehearsal for Oct 25', rpe:8 },
+      { d:'Sun', date:'Oct 18', type:'long', dist:19, title:'Long run', detail:'15km easy + 4km @ M (4:05)', rpe:6 },
     ]
   },
   {
-    n: 4, name: 'Business travel + key long run', tag: {label:'TRAVEL', cls:'reload'},
-    dates: 'Oct 19 → Oct 25', vol: 70, quality: 19,
+    n: 4, name: 'CV + key long run', tag: {label:'PEAK', cls:'peak'},
+    dates: 'Oct 19 → Oct 25', vol: 69, quality: 19,
     days: [
-      { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest / travel', rpe:0 },
-      { d:'Tue', date:'Oct 20', type:'easy', dist:9, title:'Easy', detail:'30-50\' whatever fits the day', rpe:3 },
-      { d:'Wed', date:'Oct 21', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Thu', date:'Oct 22', type:'cv', dist:11, title:'CV session (optional)', detail:'3km WU · 6×800 @ 3:38 · 90" jog · 2km CD · only if park/treadmill available, otherwise 8km easy', rpe:8 },
-      { d:'Fri', date:'Oct 23', type:'easy', dist:6, title:'Easy or rest', detail:'Travel back · skip if the day is packed', rpe:3 },
-      { d:'Sat', date:'Oct 24', type:'easy', dist:12, title:'Easy', detail:'Steady aerobic, no intervals', rpe:4 },
-      { d:'Sun', date:'Oct 25', type:'long', dist:22, title:'Long w/ HMP block', detail:'12km easy + 8km @ HMP (3:47) continuous + 2km CD', rpe:9 },
+      { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Tue', date:'Oct 20', type:'cv', dist:11, title:'CV session', detail:'3km WU · 6×800 @ 3:38 · 90" jog · 2km CD · rep 1 at 3:40, not faster', rpe:8 },
+      { d:'Wed', date:'Oct 21', type:'easy', dist:12, title:'Easy', rpe:4 },
+      { d:'Thu', date:'Oct 22', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
+      { d:'Fri', date:'Oct 23', type:'easy', dist:8, title:'Very easy', detail:'Legs fresh for Saturday', rpe:3 },
+      { d:'Sat', date:'Oct 24', type:'long', dist:22, title:'KEY · Long w/ HMP block', detail:'12km easy + 8km @ HMP continuous (km1 at 3:50, cap ~310W, then 3:47) + 2km CD · gate 3, the predictor', rpe:9 },
+      { d:'Sun', date:'Oct 25', type:'easy', dist:6, title:'Travel · rest or 30\' easy', detail:'Business trip starts', rpe:2 },
     ]
   },
   {
-    n: 5, name: 'HM-specific + lab test', tag: {label:'PEAK', cls:'peak'},
-    dates: 'Oct 26 → Nov 1', vol: 68, quality: 25,
+    n: 5, name: 'Business travel + lab test', tag: {label:'TRAVEL', cls:'reload'},
+    dates: 'Oct 26 → Nov 1', vol: 71, quality: 10,
     days: [
-      { d:'Mon', date:'Oct 26', type:'rest', dist:0, title:'Rest', rpe:0 },
-      { d:'Tue', date:'Oct 27', type:'hmp', dist:15, title:'KEY · 3×3km @ HMP', detail:'3km WU · 3×3km @ 3:47 · 3\' jog · 2km CD · the predictor', rpe:8 },
-      { d:'Wed', date:'Oct 28', type:'easy', dist:10, title:'Easy', rpe:4 },
-      { d:'Thu', date:'Oct 29', type:'easy', dist:8, title:'Pre-test shakeout', detail:'8km easy + 4×100m strides · nervous system primed, legs fresh', rpe:3 },
+      { d:'Mon', date:'Oct 26', type:'easy', dist:8, title:'Easy (travel)', detail:'Recovery from Saturday', rpe:3 },
+      { d:'Tue', date:'Oct 27', type:'easy', dist:10, title:'Easy + strides (travel)', detail:'10km + 5×100m strides', rpe:4 },
+      { d:'Wed', date:'Oct 28', type:'easy', dist:10, title:'Easy (travel)', rpe:3 },
+      { d:'Thu', date:'Oct 29', type:'easy', dist:8, title:'Pre-test shakeout (travel back)', detail:'8km easy + 4×100m strides · legs fresh for the lab', rpe:3 },
       { d:'Fri', date:'Oct 30', type:'cv', dist:10, title:'🧪 LAB · VO2max + lactate', detail:'Ramp to exhaustion + stepped lactate protocol · ~45-60min at lab · fuel normally, no added caffeine', rpe:10 },
       { d:'Sat', date:'Oct 31', type:'easy', dist:5, title:'Very easy OR rest', detail:'5km very easy, protect Sunday · skip entirely if legs trashed', rpe:2 },
       { d:'Sun', date:'Nov 1', type:'long', dist:20, title:'Progression LR', detail:'12km easy → 6km @ M → 2km @ HMP', rpe:7 },
