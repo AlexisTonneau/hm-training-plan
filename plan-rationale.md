@@ -84,13 +84,13 @@ User chose aggressive targets with explicit understanding that:
 ```
 Week 1 · Sep 28 → Oct 4 · Wake-up + diagnostic ·        68 km · 1 quality
 Week 2 · Oct 5  → Oct 11 · Race week · 10K tune-up ·    49 km · 1 session + race
-Week 3 · Oct 12 → Oct 18 · Reload + big threshold ·     74 km · 1 quality + M long run
+Week 3 · Oct 12 → Oct 18 · Reload + big threshold ·     68 km · threshold (Sat) + easy long run
 Week 4 · Oct 19 → Oct 25 · CV + key long run (Sat) ·    69 km · CV + HMP long run (gate 3)
 Week 5 · Oct 26 → Nov 1  · Business travel + lab test · 71 km · lab + long run
 Week 6 · Nov 2  → Nov 8  · Sharpen ·                    72 km · 3 quality
 Week 7 · Nov 9  → Nov 15 · Taper + HM race ·            44 km · 1 session + race
                                                        ────────────────────────
-                                                       447 km total
+                                                       441 km total
 ```
 
 ### Design philosophy
@@ -156,6 +156,7 @@ Fallback targets if gates fail:
   - The 22 km / 8 km @ HMP long run moved from Sun Oct 25 (travel day) to Sat Oct 24, with a pacing cap (first km 3:50, ~310 W).
   - The Tue Oct 27 3×3 km @ HMP KEY was dropped. It falls during travel, and its HMP stimulus overlaps with the Oct 24 run, which is the stronger HM predictor. Gate 3 moved to Oct 24.
   - Oct 25–29 is easy running only. Thursday stays the pre-lab shakeout; the lab test (Oct 30) and the Nov 1 long run are unchanged.
+- **Thu Oct 15 threshold stopped after rep 1 (sore legs).** Rep 1 was on target (3:49, 311 W, HR 185, matching Sep 29), so the limit was muscular soreness from the hilly 10K's descents, not fitness. The session moved to Sat Oct 17, conditional on Friday feeling normal. The Sun Oct 18 long run became 17 km all easy. Fallback if legs are still sore Saturday: run easy and do the 4×2 km on Tue Oct 20 in place of the CV. The 4×2 km is more specific to the HM, so the CV is the one to drop. Sat Oct 24 (gate 3) stays the top priority.
 
 ---
 

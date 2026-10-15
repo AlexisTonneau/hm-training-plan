@@ -189,13 +189,13 @@
   <section class="stats">
     <div class="stat">
       <div class="stat-label">Total block volume</div>
-      <div class="stat-value">447<span class="unit">km</span></div>
+      <div class="stat-value">441<span class="unit">km</span></div>
       <div class="stat-sub">across 7 weeks</div>
     </div>
     <div class="stat">
       <div class="stat-label">Peak week</div>
-      <div class="stat-value">74<span class="unit">km</span></div>
-      <div class="stat-sub">Week 3 · reload + big threshold</div>
+      <div class="stat-value">72<span class="unit">km</span></div>
+      <div class="stat-sub">Week 6 · sharpen</div>
     </div>
     <div class="stat">
       <div class="stat-label">Quality sessions</div>
@@ -306,15 +306,15 @@ const WEEKS = [
   },
   {
     n: 3, name: 'Reload + big threshold', tag: {label:'BUILD', cls:'build'},
-    dates: 'Oct 12 → Oct 18', vol: 74, quality: 18,
+    dates: 'Oct 12 → Oct 18', vol: 68, quality: 16,
     days: [
       { d:'Mon', date:'Oct 12', done:true, type:'rest', dist:0, title:'Rest ✓', detail:'Day after the 10K', rpe:0 },
       { d:'Tue', date:'Oct 13', done:true, type:'easy', dist:10.1, title:'Easy ✓', detail:'10.1km @ 5:07/km', rpe:3 },
       { d:'Wed', date:'Oct 14', done:true, type:'easy', dist:10.8, title:'Easy ✓', detail:'10.8km @ 4:55/km · a touch quick for easy', rpe:4 },
-      { d:'Thu', date:'Oct 15', type:'threshold', dist:14, title:'Big threshold', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD · hold 3:47-3:49, not 3:40', rpe:8 },
-      { d:'Fri', date:'Oct 16', type:'easy', dist:10, title:'Easy', rpe:4 },
-      { d:'Sat', date:'Oct 17', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Sun', date:'Oct 18', type:'long', dist:19, title:'Long run', detail:'15km easy + 4km @ M (4:05)', rpe:6 },
+      { d:'Thu', date:'Oct 15', done:true, type:'threshold', dist:7.7, title:'Threshold · stopped after rep 1', detail:'Rep 1: 2km @ 3:49 (311W, HR 185), on target · sore legs from the 10K → stopped, jogged home', rpe:6 },
+      { d:'Fri', date:'Oct 16', type:'easy', dist:8, title:'Very easy', detail:'Legs check · still sore → rest instead', rpe:3 },
+      { d:'Sat', date:'Oct 17', type:'threshold', dist:14, title:'Threshold (from Thu)', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD · only if Friday felt normal, otherwise easy and the session moves to Tue 20 instead of CV', rpe:8 },
+      { d:'Sun', date:'Oct 18', type:'long', dist:17, title:'Long run · easy', detail:'17km easy, no M finish (threshold was Saturday)', rpe:4 },
     ]
   },
   {
