@@ -87,12 +87,12 @@ User chose aggressive targets with explicit understanding that:
 Week 1 · Sep 28 → Oct 4 · Wake-up + diagnostic ·        68 km · 1 quality
 Week 2 · Oct 5  → Oct 11 · Race week · 10K tune-up ·    49 km · 1 session + race
 Week 3 · Oct 12 → Oct 18 · Reload + big threshold ·     72 km · threshold (Sat) + long run
-Week 4 · Oct 19 → Oct 25 · Lab test + key long run ·    62 km · lab (Tue) + HMP long run (gate 3)
+Week 4 · Oct 19 → Oct 25 · Lab test + key long run ·    66 km · lab (Tue) + HMP long run (gate 3)
 Week 5 · Oct 26 → Nov 1  · Business travel · down week · 74 km · easy + M/HMP long run
 Week 6 · Nov 2  → Nov 8  · Sharpen ·                    72 km · 3 quality
 Week 7 · Nov 9  → Nov 15 · Taper + HM race ·            44 km · 1 session + race
                                                        ────────────────────────
-                                                       441 km total
+                                                       445 km total
 ```
 
 ### Design philosophy
@@ -162,7 +162,7 @@ Fallback targets if gates fail:
 - **Sat Oct 17 threshold executed cleanly** — 3:48 / 3:47 / 3:50 / 3:47 at 315–317 W, HR 184–187, RPE 6. Same HR and RPE as the Sep 29 1 km reps, at double the rep length: threshold is improving. First session with every rep on the prescribed pace.
 - **Lab test moved to Tue Oct 20.**
   - It replaces the Tue Oct 20 CV session; the ramp to exhaustion provides the VO2/CV stimulus. The CV isn't rescheduled, because Week 6 (Nov 3) already has one.
-  - Mon Oct 19 is rest, and Wed Oct 21 is very easy or rest.
+  - Mon Oct 19 is rest. Wed Oct 21 is a normal 10 km easy: a lab test (mostly sub-threshold steps plus 2–3 maximal minutes at the end of the ramp) costs about as much as an interval session, with 24–48 h recovery.
   - Sat Oct 24 (gate 3) is 4 days after the test, and the measured LT2 can be used to check the HMP target before it.
   - Week 5 (travel) becomes a down week: easy running plus the Nov 1 long run.
 
