@@ -37,7 +37,7 @@ Design document capturing the constraints, specs, and reasoning behind the train
 
 Both targets self-set as "dauntless" / ambitious given the ultra-focused background.
 
-**Lab checkpoint**: Fri Oct 30 — VO2max + lactate testing.
+**Lab checkpoint**: Tue Oct 20 — VO2max + lactate testing (moved from Fri Oct 30).
 
 ---
 
@@ -84,9 +84,9 @@ User chose aggressive targets with explicit understanding that:
 ```
 Week 1 · Sep 28 → Oct 4 · Wake-up + diagnostic ·        68 km · 1 quality
 Week 2 · Oct 5  → Oct 11 · Race week · 10K tune-up ·    49 km · 1 session + race
-Week 3 · Oct 12 → Oct 18 · Reload + big threshold ·     68 km · threshold (Sat) + easy long run
-Week 4 · Oct 19 → Oct 25 · CV + key long run (Sat) ·    69 km · CV + HMP long run (gate 3)
-Week 5 · Oct 26 → Nov 1  · Business travel + lab test · 71 km · lab + long run
+Week 3 · Oct 12 → Oct 18 · Reload + big threshold ·     72 km · threshold (Sat) + long run
+Week 4 · Oct 19 → Oct 25 · Lab test + key long run ·    62 km · lab (Tue) + HMP long run (gate 3)
+Week 5 · Oct 26 → Nov 1  · Business travel · down week · 74 km · easy + M/HMP long run
 Week 6 · Nov 2  → Nov 8  · Sharpen ·                    72 km · 3 quality
 Week 7 · Nov 9  → Nov 15 · Taper + HM race ·            44 km · 1 session + race
                                                        ────────────────────────
@@ -101,7 +101,7 @@ Week 7 · Nov 9  → Nov 15 · Taper + HM race ·            44 km · 1 session 
 4. **Strides on 3+ easy days/week** — 5–6 × 100 m fast. Free neuromuscular adaptation, no injury risk. Critical for an ultra-adapted body.
 5. **Long-run progression peaks at Week 4** (22 km with 8 km continuous @ HMP) — the aerobic-specific peak.
 6. **10K race treated as training stimulus**, not a PR attempt — becomes HMP dress rehearsal.
-7. **Lab test (Oct 30) treated as a hard session** — pre-shakeout + post-recovery built in.
+7. **Lab test (Oct 20) treated as a hard session** — pre-shakeout + post-recovery built in.
 
 ---
 
@@ -157,6 +157,12 @@ Fallback targets if gates fail:
   - The Tue Oct 27 3×3 km @ HMP KEY was dropped. It falls during travel, and its HMP stimulus overlaps with the Oct 24 run, which is the stronger HM predictor. Gate 3 moved to Oct 24.
   - Oct 25–29 is easy running only. Thursday stays the pre-lab shakeout; the lab test (Oct 30) and the Nov 1 long run are unchanged.
 - **Thu Oct 15 threshold stopped after rep 1 (sore legs).** Rep 1 was on target (3:49, 311 W, HR 185, matching Sep 29), so the limit was muscular soreness from the hilly 10K's descents, not fitness. The session moved to Sat Oct 17, conditional on Friday feeling normal. The Sun Oct 18 long run became 17 km all easy. Fallback if legs are still sore Saturday: run easy and do the 4×2 km on Tue Oct 20 in place of the CV. The 4×2 km is more specific to the HM, so the CV is the one to drop. Sat Oct 24 (gate 3) stays the top priority.
+- **Sat Oct 17 threshold executed cleanly** — 3:48 / 3:47 / 3:50 / 3:47 at 315–317 W, HR 184–187, RPE 6. Same HR and RPE as the Sep 29 1 km reps, at double the rep length: threshold is improving. First session with every rep on the prescribed pace.
+- **Lab test moved to Tue Oct 20.**
+  - It replaces the Tue Oct 20 CV session; the ramp to exhaustion provides the VO2/CV stimulus. The CV isn't rescheduled, because Week 6 (Nov 3) already has one.
+  - Mon Oct 19 is rest, and Wed Oct 21 is very easy or rest.
+  - Sat Oct 24 (gate 3) is 4 days after the test, and the measured LT2 can be used to check the HMP target before it.
+  - Week 5 (travel) becomes a down week: easy running plus the Nov 1 long run.
 
 ---
 

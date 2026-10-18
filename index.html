@@ -194,12 +194,12 @@
     </div>
     <div class="stat">
       <div class="stat-label">Peak week</div>
-      <div class="stat-value">72<span class="unit">km</span></div>
-      <div class="stat-sub">Week 6 · sharpen</div>
+      <div class="stat-value">74<span class="unit">km</span></div>
+      <div class="stat-sub">Week 5 · easy volume (travel)</div>
     </div>
     <div class="stat">
       <div class="stat-label">Quality sessions</div>
-      <div class="stat-value">13<span class="unit">total</span></div>
+      <div class="stat-value">12<span class="unit">total</span></div>
       <div class="stat-sub">incl. lab test · 2 races</div>
     </div>
     <div class="stat">
@@ -306,24 +306,24 @@ const WEEKS = [
   },
   {
     n: 3, name: 'Reload + big threshold', tag: {label:'BUILD', cls:'build'},
-    dates: 'Oct 12 → Oct 18', vol: 68, quality: 16,
+    dates: 'Oct 12 → Oct 18', vol: 72, quality: 15,
     days: [
       { d:'Mon', date:'Oct 12', done:true, type:'rest', dist:0, title:'Rest ✓', detail:'Day after the 10K', rpe:0 },
       { d:'Tue', date:'Oct 13', done:true, type:'easy', dist:10.1, title:'Easy ✓', detail:'10.1km @ 5:07/km', rpe:3 },
       { d:'Wed', date:'Oct 14', done:true, type:'easy', dist:10.8, title:'Easy ✓', detail:'10.8km @ 4:55/km · a touch quick for easy', rpe:4 },
       { d:'Thu', date:'Oct 15', done:true, type:'threshold', dist:7.7, title:'Threshold · stopped after rep 1', detail:'Rep 1: 2km @ 3:49 (311W, HR 185), on target · sore legs from the 10K → stopped, jogged home', rpe:6 },
-      { d:'Fri', date:'Oct 16', type:'easy', dist:8, title:'Very easy', detail:'Legs check · still sore → rest instead', rpe:3 },
-      { d:'Sat', date:'Oct 17', type:'threshold', dist:14, title:'Threshold (from Thu)', detail:'3km WU · 4×2km @ 3:47 · 2\' jog · 2km CD · only if Friday felt normal, otherwise easy and the session moves to Tue 20 instead of CV', rpe:8 },
-      { d:'Sun', date:'Oct 18', type:'long', dist:17, title:'Long run · easy', detail:'17km easy, no M finish (threshold was Saturday)', rpe:4 },
+      { d:'Fri', date:'Oct 16', done:true, type:'easy', dist:11.3, title:'Very easy ✓', detail:'11.3km @ 5:29/km · legs check passed', rpe:3 },
+      { d:'Sat', date:'Oct 17', done:true, type:'threshold', dist:14.8, title:'Threshold ✓ nailed', detail:'Splits 3:48 · 3:47 · 3:50 · 3:47 · 315-317W, HR 184-187 · RPE 6 despite a short night', rpe:6 },
+      { d:'Sun', date:'Oct 18', done:true, type:'long', dist:17.1, title:'Long run ✓ (drifted to steady)', detail:'17.1km @ 4:58/km · km 5-13 at 4:41-4:51, HR 165-174 · duo pace, more steady than easy', rpe:5 },
     ]
   },
   {
-    n: 4, name: 'CV + key long run', tag: {label:'PEAK', cls:'peak'},
-    dates: 'Oct 19 → Oct 25', vol: 69, quality: 19,
+    n: 4, name: 'Lab test + key long run', tag: {label:'PEAK', cls:'peak'},
+    dates: 'Oct 19 → Oct 25', vol: 62, quality: 18,
     days: [
-      { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest', rpe:0 },
-      { d:'Tue', date:'Oct 20', type:'cv', dist:11, title:'CV session', detail:'3km WU · 6×800 @ 3:38 · 90" jog · 2km CD · rep 1 at 3:40, not faster', rpe:8 },
-      { d:'Wed', date:'Oct 21', type:'easy', dist:12, title:'Easy', rpe:4 },
+      { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest', detail:'Day before the lab · 20\' very easy + 4 strides only if you need to move', rpe:0 },
+      { d:'Tue', date:'Oct 20', type:'cv', dist:10, title:'🧪 LAB · VO2max + lactate', detail:'Ramp to exhaustion + stepped lactate protocol · normal food, no added caffeine, no alcohol the night before · replaces the CV session', rpe:10 },
+      { d:'Wed', date:'Oct 21', type:'easy', dist:6, title:'Very easy OR rest', detail:'Post-test recovery', rpe:2 },
       { d:'Thu', date:'Oct 22', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
       { d:'Fri', date:'Oct 23', type:'easy', dist:8, title:'Very easy', detail:'Legs fresh for Saturday', rpe:3 },
       { d:'Sat', date:'Oct 24', type:'long', dist:22, title:'KEY · Long w/ HMP block', detail:'12km easy + 8km @ HMP continuous (km1 at 3:50, cap ~310W, then 3:47) + 2km CD · gate 3, the predictor', rpe:9 },
@@ -331,15 +331,15 @@ const WEEKS = [
     ]
   },
   {
-    n: 5, name: 'Business travel + lab test', tag: {label:'TRAVEL', cls:'reload'},
-    dates: 'Oct 26 → Nov 1', vol: 71, quality: 10,
+    n: 5, name: 'Business travel · down week', tag: {label:'TRAVEL', cls:'reload'},
+    dates: 'Oct 26 → Nov 1', vol: 74, quality: 8,
     days: [
       { d:'Mon', date:'Oct 26', type:'easy', dist:8, title:'Easy (travel)', detail:'Recovery from Saturday', rpe:3 },
       { d:'Tue', date:'Oct 27', type:'easy', dist:10, title:'Easy + strides (travel)', detail:'10km + 5×100m strides', rpe:4 },
       { d:'Wed', date:'Oct 28', type:'easy', dist:10, title:'Easy (travel)', rpe:3 },
-      { d:'Thu', date:'Oct 29', type:'easy', dist:8, title:'Pre-test shakeout (travel back)', detail:'8km easy + 4×100m strides · legs fresh for the lab', rpe:3 },
-      { d:'Fri', date:'Oct 30', type:'cv', dist:10, title:'🧪 LAB · VO2max + lactate', detail:'Ramp to exhaustion + stepped lactate protocol · ~45-60min at lab · fuel normally, no added caffeine', rpe:10 },
-      { d:'Sat', date:'Oct 31', type:'easy', dist:5, title:'Very easy OR rest', detail:'5km very easy, protect Sunday · skip entirely if legs trashed', rpe:2 },
+      { d:'Thu', date:'Oct 29', type:'easy', dist:8, title:'Easy + strides (travel back)', detail:'8km + 4×100m strides', rpe:3 },
+      { d:'Fri', date:'Oct 30', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides · back home', rpe:4 },
+      { d:'Sat', date:'Oct 31', type:'easy', dist:8, title:'Easy', rpe:3 },
       { d:'Sun', date:'Nov 1', type:'long', dist:20, title:'Progression LR', detail:'12km easy → 6km @ M → 2km @ HMP', rpe:7 },
     ]
   },
