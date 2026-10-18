@@ -37,6 +37,8 @@ Design document capturing the constraints, specs, and reasoning behind the train
 
 Both targets self-set as "dauntless" / ambitious given the ultra-focused background.
 
+**HM course**: flat, ~50 m elevation gain over 21.1 km. Even-split pacing is viable.
+
 **Lab checkpoint**: Tue Oct 20 — VO2max + lactate testing (moved from Fri Oct 30).
 
 ---
