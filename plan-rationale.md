@@ -87,12 +87,12 @@ User chose aggressive targets with explicit understanding that:
 Week 1 · Sep 28 → Oct 4 · Wake-up + diagnostic ·        68 km · 1 quality
 Week 2 · Oct 5  → Oct 11 · Race week · 10K tune-up ·    49 km · 1 session + race
 Week 3 · Oct 12 → Oct 18 · Reload + big threshold ·     72 km · threshold (Sat) + long run
-Week 4 · Oct 19 → Oct 25 · Lab test + key long run ·    70 km · lab (Tue) + HMP long run (gate 3)
+Week 4 · Oct 19 → Oct 25 · Lab test + key long run ·    68 km · lab (Tue) + half-Cooper (Fri) + HMP long run (Sun, gate 3)
 Week 5 · Oct 26 → Nov 1  · Business travel · down week · 74 km · easy + M/HMP long run
 Week 6 · Nov 2  → Nov 8  · Sharpen ·                    72 km · 3 quality
 Week 7 · Nov 9  → Nov 15 · Taper + HM race ·            44 km · 1 session + race
                                                        ────────────────────────
-                                                       449 km total
+                                                       447 km total
 ```
 
 ### Design philosophy
@@ -161,7 +161,7 @@ Honest off-ramps built into the block to recalibrate targets based on reality, n
 |---|---|---|---|---|
 | 1 | **Tue Sep 29** | 5×1000 @ 3:50 diagnostic | Hold 3:50, RPE ≤ 8 | ✅ **PASSED** — ran 3:47 avg (HMP) at RPE 6, HR 187 (low-Z4) |
 | 2 | Sun Oct 11 | 10K tune-up race | Finish 37:30–38:00 feeling could hold 5 km more | ✗ **Not passed on the clock** — 39:40 on a hilly course (118 m D+). Power ≈ 37:30 flat-equivalent, but km 1–2 ran ~10% over race-average power and faded from km 5. Pacing flagged as #1 risk; HM power cap planned |
-| 3 | Sat Oct 24 | 22 km with 8 km continuous @ HMP (replaces the 3×3 km KEY, moved for travel) | Clean 3:47 through km 8 | pending |
+| 3 | Sun Oct 25 | 22 km with 8 km continuous @ HMP (replaces the 3×3 km KEY, moved for travel) | Clean 3:47 through km 8 | pending |
 
 Fallback targets if gates fail:
 - Gate 1 miss → HM target slides to 1:22
@@ -196,6 +196,7 @@ Fallback targets if gates fail:
   - Week 5 (travel) becomes a down week: easy running plus the Nov 1 long run.
 - **Lab test done (Tue Oct 20).** LT1 is 14.0–14.3 km/h (HR ~172), LT2 is 15.5–16.0 km/h (HR 180–183), max HR is 198. The pace zones are confirmed unchanged. HMP sits at LT2, which adds an HR ≤ 182 check to gate 3 and a 3:48–3:50 race start. Details in §6.
 - **Sun Oct 25 is now a 10 km recovery run.** The flight is in the evening, so there's time to run during the day. It was rest or 30 min easy. The run is easy (5:10–5:30) because it comes the day after gate 3. Week 4 goes from 66 to 70 km and the block total from 445 to 449 km.
+- **Half-Cooper added on Fri Oct 23; gate 3 moved to Sun Oct 25.** The athlete wants a field check of the lab's treadmill VMA (18.5 km/h ≈ 1 850 m in 6 min). Friday is the only slot before the trip that leaves 48 h before the key run, so the 22 km / 8 km @ HMP moves to Sunday morning (flight in the evening) and Saturday becomes 8 km very easy. Mon Oct 26 is the recovery day. Week 4 goes to 68 km, the block total to 447 km.
 
 ---
 

@@ -189,7 +189,7 @@
   <section class="stats">
     <div class="stat">
       <div class="stat-label">Total block volume</div>
-      <div class="stat-value">449<span class="unit">km</span></div>
+      <div class="stat-value">447<span class="unit">km</span></div>
       <div class="stat-sub">across 7 weeks</div>
     </div>
     <div class="stat">
@@ -199,8 +199,8 @@
     </div>
     <div class="stat">
       <div class="stat-label">Quality sessions</div>
-      <div class="stat-value">12<span class="unit">total</span></div>
-      <div class="stat-sub">incl. lab test · 2 races</div>
+      <div class="stat-value">13<span class="unit">total</span></div>
+      <div class="stat-sub">incl. lab test + half-Cooper · 2 races</div>
     </div>
     <div class="stat">
       <div class="stat-label">Longest run</div>
@@ -269,7 +269,7 @@
       <ul>
         <li><strong>✓ Tue Sep 29 · 5×1000 · PASSED</strong> — Ran 3:47 avg (target was 3:50), HR 187 (low-Z4), RPE 6. HMP feels holdable. Sub-1:20 gained confidence.</li>
         <li><strong>~ Sun Oct 11 · 10K · 39:40 · NOT PASSED ON THE CLOCK</strong> — Hilly course (118m D+). Power says the effort was ~37:30 flat-equivalent, but first 2 km ran ~10% over race-average power, then a fade from km 5. Fitness is roughly there; pacing is the #1 risk. Gate 3 + lab test decide the HM target.</li>
-        <li><strong>Sat Oct 24 · 22km w/ 8km continuous @ HMP</strong> — the predictor (replaces the 3×3km, moved for travel). Clean 3:47 through km 8 = Nov 15 is on. If you can only hold 3:52, race for 1:21.</li>
+        <li><strong>Sun Oct 25 · 22km w/ 8km continuous @ HMP</strong> — the predictor (replaces the 3×3km, moved for travel). Clean 3:47 through km 8 = Nov 15 is on. If you can only hold 3:52, race for 1:21.</li>
       </ul>
     </div>
   </section>
@@ -319,22 +319,22 @@ const WEEKS = [
   },
   {
     n: 4, name: 'Lab test + key long run', tag: {label:'PEAK', cls:'peak'},
-    dates: 'Oct 19 → Oct 25', vol: 70, quality: 18,
+    dates: 'Oct 19 → Oct 25', vol: 68, quality: 20,
     days: [
       { d:'Mon', date:'Oct 19', type:'rest', dist:0, title:'Rest', detail:'Day before the lab · 20\' very easy + 4 strides only if you need to move', rpe:0 },
       { d:'Tue', date:'Oct 20', type:'cv', dist:10, title:'🧪 LAB · VO2max + lactate', detail:'Ramp to exhaustion + stepped lactate protocol · normal food, no added caffeine, no alcohol the night before · replaces the CV session', rpe:10 },
       { d:'Wed', date:'Oct 21', type:'easy', dist:10, title:'Easy', detail:'Normal easy day · the test costs about as much as an interval session', rpe:3 },
       { d:'Thu', date:'Oct 22', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Fri', date:'Oct 23', type:'easy', dist:8, title:'Very easy', detail:'Legs fresh for Saturday', rpe:3 },
-      { d:'Sat', date:'Oct 24', type:'long', dist:22, title:'KEY · Long w/ HMP block', detail:'12km easy + 8km @ HMP continuous (km1 at 3:50, cap ~310W, then 3:47) + 2km CD · gate 3, the predictor', rpe:9 },
-      { d:'Sun', date:'Oct 25', type:'easy', dist:10, title:'Recovery easy', detail:'Day after the key long run · 10km at 5:10–5:30, flat, HR well under LT1 · run during the day, travel in the evening', rpe:3 },
+      { d:'Fri', date:'Oct 23', type:'cv', dist:8, title:'Half-Cooper · lab check', detail:'Track · 3km WU + 4 strides · 6\' all-out, even pace (start ~3:15, not faster) · 2km CD · VMA = distance in m / 100 · lab says 18.5 km/h ≈ 1850m', rpe:9 },
+      { d:'Sat', date:'Oct 24', type:'easy', dist:8, title:'Very easy', detail:'Legs fresh for Sunday · no strides', rpe:3 },
+      { d:'Sun', date:'Oct 25', type:'long', dist:22, title:'KEY · Long w/ HMP block', detail:'12km easy + 8km @ HMP continuous (km1 at 3:50, cap ~310W, then 3:47) + 2km CD · gate 3, the predictor · run in the morning, flight in the evening', rpe:9 },
     ]
   },
   {
     n: 5, name: 'Business travel · down week', tag: {label:'TRAVEL', cls:'reload'},
     dates: 'Oct 26 → Nov 1', vol: 74, quality: 8,
     days: [
-      { d:'Mon', date:'Oct 26', type:'easy', dist:8, title:'Easy (travel)', detail:'Recovery from Saturday', rpe:3 },
+      { d:'Mon', date:'Oct 26', type:'easy', dist:8, title:'Easy (travel)', detail:'Recovery from Sunday\'s long run · very easy', rpe:3 },
       { d:'Tue', date:'Oct 27', type:'easy', dist:10, title:'Easy + strides (travel)', detail:'10km + 5×100m strides', rpe:4 },
       { d:'Wed', date:'Oct 28', type:'easy', dist:10, title:'Easy (travel)', rpe:3 },
       { d:'Thu', date:'Oct 29', type:'easy', dist:8, title:'Easy + strides (travel back)', detail:'8km + 4×100m strides', rpe:3 },
