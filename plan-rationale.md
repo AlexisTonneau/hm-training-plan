@@ -181,7 +181,7 @@ Fallback targets if gates fail:
 ### Mid-block adjustments
 - **Oct 25 session rebuilt** — original 24 km LR with 10 km continuous @ HMP was overcooked (equivalent to HM race effort inside a long run). Changed to 22 km with 8 km continuous @ HMP, RPE 9. Rationale: internal consistency with Week 5 KEY session; Pfitzinger-style benchmark.
 - **Week 5 reorganized for lab test** — Thursday mixed session dropped to pre-test shakeout; Fri lab test treated as RPE 10 quality session; Saturday slashed from 13 km → 5 km; Sunday LR trimmed from 22 → 20 km. Volume drops 85 → 68 km, trade justified by calibration value of lab data.
-- **Weeks 3–5 rebuilt around business travel (Sun Oct 25 – Thu Oct 29).** The trip was first announced for Oct 19–23, then corrected. Athlete can run easy daily during travel.
+- **Weeks 3–5 rebuilt around business travel (Sun Oct 25 – Fri Oct 30).** The trip was first announced for Oct 19–23, then corrected to Oct 25–29, then to Oct 25–30. Athlete can run easy daily during travel.
   - The 4×2 km @ HMP moved from Tue Oct 20 to Thu Oct 15. Week 3's two light threshold sessions were dropped, and the Sun Oct 18 long run stays at 4 km @ M.
   - The CV session (6×800) moved to Tue Oct 20, at home.
   - The 22 km / 8 km @ HMP long run moved from Sun Oct 25 (travel day) to Sat Oct 24, with a pacing cap (first km 3:50, ~310 W).
@@ -197,6 +197,7 @@ Fallback targets if gates fail:
 - **Lab test done (Tue Oct 20).** LT1 is 14.0–14.3 km/h (HR ~172), LT2 is 15.5–16.0 km/h (HR 180–183), max HR is 198. The pace zones are confirmed unchanged. HMP sits at LT2, which adds an HR ≤ 182 check to gate 3 and a 3:48–3:50 race start. Details in §6.
 - **Sun Oct 25 is now a 10 km recovery run.** The flight is in the evening, so there's time to run during the day. It was rest or 30 min easy. The run is easy (5:10–5:30) because it comes the day after gate 3. Week 4 goes from 66 to 70 km and the block total from 445 to 449 km.
 - **Half-Cooper added on Fri Oct 23; gate 3 moved to Sun Oct 25.** The athlete wants a field check of the lab's treadmill VMA (18.5 km/h ≈ 1 850 m in 6 min). Friday is the only slot before the trip that leaves 48 h before the key run, so the 22 km / 8 km @ HMP moves to Sunday morning (flight in the evening) and Saturday becomes 8 km very easy. Mon Oct 26 is the recovery day. Week 4 goes to 68 km, the block total to 447 km.
+- **Trip ends Fri Oct 30, not Thu Oct 29.** Thu Oct 29 becomes 10 km easy + strides on the trip, and Fri Oct 30 is 8 km easy + strides before the trip home. Week 5 stays at 74 km; the Nov 1 long run is unchanged.
 
 ---
 
