@@ -39,7 +39,7 @@ Both targets self-set as "dauntless" / ambitious given the ultra-focused backgro
 
 **HM course**: flat, ~50 m elevation gain over 21.1 km. Even-split pacing is viable.
 
-**Lab checkpoint**: Tue Oct 20 — VO2max + lactate testing (moved from Fri Oct 30).
+**Lab checkpoint**: Tue Oct 20 — VO2max + lactate testing (moved from Fri Oct 30). Done; results in §6.
 
 ---
 
@@ -87,12 +87,12 @@ User chose aggressive targets with explicit understanding that:
 Week 1 · Sep 28 → Oct 4 · Wake-up + diagnostic ·        68 km · 1 quality
 Week 2 · Oct 5  → Oct 11 · Race week · 10K tune-up ·    49 km · 1 session + race
 Week 3 · Oct 12 → Oct 18 · Reload + big threshold ·     72 km · threshold (Sat) + long run
-Week 4 · Oct 19 → Oct 25 · Lab test + key long run ·    66 km · lab (Tue) + HMP long run (gate 3)
+Week 4 · Oct 19 → Oct 25 · Lab test + key long run ·    70 km · lab (Tue) + HMP long run (gate 3)
 Week 5 · Oct 26 → Nov 1  · Business travel · down week · 74 km · easy + M/HMP long run
 Week 6 · Nov 2  → Nov 8  · Sharpen ·                    72 km · 3 quality
 Week 7 · Nov 9  → Nov 15 · Taper + HM race ·            44 km · 1 session + race
                                                        ────────────────────────
-                                                       445 km total
+                                                       449 km total
 ```
 
 ### Design philosophy
@@ -121,6 +121,35 @@ Derived from COROS zones + target HM pace 3:47/km:
 | 10K / CV | 3:38–3:42/km | 8 |
 | VO2 (I) | 3:20–3:25/km | 9 |
 | Strides | ~3:00/km, 100m | 4 (sprint, relaxed) |
+
+### Lab validation (Tue Oct 20, Le Lab)
+
+Two-part treadmill test at 1% grade. Part 1 is a step test for the thresholds: 3 min stages from 12 km/h, +1 km/h, with walking breaks for finger-prick lactate. After a ~4 min recovery jog at 9 km/h, part 2 is a short VO2max ramp: 18 km/h for 3 min, 18.5 km/h for 1 min, then 19 km/h for 13 s. Lab weight 71.4 kg.
+
+| Stage | Pace | HR | RPE | Lactate (mmol/L) |
+|---|---|---|---|---|
+| 12 km/h | 5:00 | 155 | – | 1.4 |
+| 13 km/h | 4:37 | 164 | 3 | 1.5 |
+| 14 km/h | 4:17 | 172 | 4 | 1.9 |
+| 15 km/h | 4:00 | 178 | 6 | 2.3 |
+| 16 km/h | 3:45 | 183 | 7 | 3.5 |
+| 16.5 km/h (~100 s) | 3:38 | 185 | 7.5 | 3.5 |
+| 17 km/h (~90 s) | 3:32 | 188 | 8.5 | 4.8 |
+
+The 16.5 and 17 km/h stages are swapped in the lab's files; the order above is the one the athlete ran.
+
+| Marker | Speed | Pace | HR |
+|---|---|---|---|
+| **LT1** (first rise, ~2 mmol) | 14.0–14.3 km/h | 4:17–4:12 | ~172 |
+| **LT2** (bend between 15 and 16 km/h; baseline + 1.5 mmol at 15.5) | 15.5–16.0 km/h | 3:52–3:45 | 180–183 |
+| Max HR | | | **198** |
+| vVO2max (lab "VMA") | 18.5 km/h | 3:15 | |
+
+- **Zones confirmed.** Easy pace is ~1.4 mmol, well under LT1. M pace is just above LT1. T pace and HMP sit on LT2 (~3.3 mmol at 3:47, HR ~182). CV pace is above LT2. No zone change.
+- **HMP sits at LT2, not under it**: sub-1:20 is physiologically possible but has no margin. Race start 3:48–3:50 through 5 km, HR ≤ 182. Treat 3:45 as the ceiling for threshold reps.
+- **Gate 3 HR check**: if 3:47 holds at HR ≤ 182 at a manageable effort, keep 1:20. If HR drifts to 186+ or RPE hits 8, race for 1:21–1:22 (3:50–3:53/km).
+- **Measured VO2max of 53.1 ml/kg/min is uncertain.** VO2 plateaued at 51–53 for the last ~2.5 min of the ramp while HR rose to 197, so the effort was maximal; the low RER (≤ 1.06) doesn't explain the gap with COROS's estimate (60). Either the analyzer reads ~12% low (true value ~60 with normal economy), or the 53 is right and economy is exceptional (~170 ml/kg/km). Only the lab's calibration log can tell. Lactate, HR and speed data are independent of the gas analyzer and are used as is.
+- **The lab report has data errors.** The VO2 L/min column is ~2.4× too low, and the fat/carb/energy figures were computed from it. The per-stage VO2 values include the end-of-stage drop. Its marathon-oriented recommendations are not used in this block. A complaint was drafted asking for a corrected report and the calibration log.
 
 ---
 
@@ -165,6 +194,8 @@ Fallback targets if gates fail:
   - Mon Oct 19 is rest. Wed Oct 21 is a normal 10 km easy: a lab test (mostly sub-threshold steps plus 2–3 maximal minutes at the end of the ramp) costs about as much as an interval session, with 24–48 h recovery.
   - Sat Oct 24 (gate 3) is 4 days after the test, and the measured LT2 can be used to check the HMP target before it.
   - Week 5 (travel) becomes a down week: easy running plus the Nov 1 long run.
+- **Lab test done (Tue Oct 20).** LT1 is 14.0–14.3 km/h (HR ~172), LT2 is 15.5–16.0 km/h (HR 180–183), max HR is 198. The pace zones are confirmed unchanged. HMP sits at LT2, which adds an HR ≤ 182 check to gate 3 and a 3:48–3:50 race start. Details in §6.
+- **Sun Oct 25 is now a 10 km recovery run.** The flight is in the evening, so there's time to run during the day. It was rest or 30 min easy. The run is easy (5:10–5:30) because it comes the day after gate 3. Week 4 goes from 66 to 70 km and the block total from 445 to 449 km.
 
 ---
 
