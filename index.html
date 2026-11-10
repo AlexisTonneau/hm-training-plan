@@ -209,18 +209,18 @@
   <section class="stats">
     <div class="stat">
       <div class="stat-label">Total block volume</div>
-      <div class="stat-value">447<span class="unit">km</span></div>
+      <div class="stat-value">393<span class="unit">km</span></div>
       <div class="stat-sub">across 7 weeks</div>
     </div>
     <div class="stat">
       <div class="stat-label">Peak week</div>
-      <div class="stat-value">74<span class="unit">km</span></div>
-      <div class="stat-sub">Week 5 · easy volume (travel)</div>
+      <div class="stat-value">72<span class="unit">km</span></div>
+      <div class="stat-sub">Week 3 · reload + big threshold</div>
     </div>
     <div class="stat">
       <div class="stat-label">Quality sessions</div>
-      <div class="stat-value">13<span class="unit">total</span></div>
-      <div class="stat-sub">incl. lab test + half-Cooper · 2 races</div>
+      <div class="stat-value">12<span class="unit">total</span></div>
+      <div class="stat-sub">incl. lab test · 2 races</div>
     </div>
     <div class="stat">
       <div class="stat-label">Longest run</div>
@@ -294,7 +294,7 @@
       <ul>
         <li><strong>✓ Tue Sep 29 · 5×1000 · PASSED</strong> — Ran 3:47 avg (target was 3:50), HR 187 (low-Z4), RPE 6. HMP feels holdable. Sub-1:20 gained confidence.</li>
         <li><strong>~ Sun Oct 11 · 10K · 39:40 · NOT PASSED ON THE CLOCK</strong> — Hilly course (118m D+). Power says the effort was ~37:30 flat-equivalent, but first 2 km ran ~10% over race-average power, then a fade from km 5. Fitness is roughly there; pacing is the #1 risk. Gate 3 + lab test decide the HM target.</li>
-        <li><strong>Sun Oct 25 · 22km w/ 8km continuous @ HMP</strong> — the predictor (replaces the 3×3km, moved for travel). Clean 3:47 through km 8 = Nov 15 is on. If you can only hold 3:52, race for 1:21.</li>
+        <li><strong>~ Sun Oct 25 · 8km @ HMP · 3:53 avg · POWER ON TARGET</strong> — 1km @ 3:44 + 7km @ 3:54 at 319W into gusty wind. Same power gave 3:45 on Nov 6 and Nov 9 in calm conditions. Race plan: 3:50 to 10 km, go for sub-1:20 only if on 37:50 and RPE ≤ 7.</li>
       </ul>
     </div>
   </section>
@@ -344,54 +344,54 @@ const WEEKS = [
   },
   {
     n: 4, name: 'Lab test + key long run', tag: {label:'PEAK', cls:'peak'},
-    dates: 'Oct 19 → Oct 25', vol: 68, quality: 20,
+    dates: 'Oct 19 → Oct 25', vol: 63, quality: 17,
     days: [
       { d:'Mon', date:'Oct 19', done:true, type:'rest', dist:0, title:'Rest', detail:'Day before the lab · 20\' very easy + 4 strides only if you need to move', rpe:0 },
       { d:'Tue', date:'Oct 20', done:true, type:'cv', dist:9.1, title:'🧪 LAB ✓ done', detail:'9.1 km treadmill test (no device watts) · HR max 196, avg HR 153 · stages 12–17 km/h stepped lactate, then ramp to exhaustion. Full results recorded', rpe:10 },
       { d:'Wed', date:'Oct 21', done:true, type:'easy', dist:10.4, title:'Easy ✓', detail:'10.4km @ 3:18/km avg (5:02/km easy) · HR avg 152, 237W avg · duo pace w/ strides, ran 4×1km reps hard', rpe:4 },
       { d:'Thu', date:'Oct 22', done:true, type:'easy', dist:10.9, title:'Easy + jog ✓', detail:'10.9km @ 5:24/km avg · HR avg 155, 223W avg · duo jog with Hugo · 11 Strava segment efforts', rpe:4 },
-      { d:'Fri', date:'Oct 23', type:'cv', dist:8, title:'Half-Cooper · lab check', detail:'Track · 3km WU + 4 strides · 6\' all-out, even pace (start ~3:15, not faster) · 2km CD · VMA = distance in m / 100 · lab says 18.5 km/h ≈ 1850m', rpe:9 },
-      { d:'Sat', date:'Oct 24', type:'easy', dist:8, title:'Very easy', detail:'Legs fresh for Sunday · no strides', rpe:3 },
-      { d:'Sun', date:'Oct 25', type:'long', dist:22, title:'KEY · Long w/ HMP block', detail:'12km easy + 8km @ HMP continuous (km1 at 3:50, cap ~310W, then 3:47) + 2km CD · gate 3, the predictor · run in the morning, flight in the evening', rpe:9 },
+      { d:'Fri', date:'Oct 23', done:true, type:'rest', dist:0, title:'Half-Cooper · not done', detail:'No activity logged', rpe:0 },
+      { d:'Sat', date:'Oct 24', done:true, type:'easy', dist:10.7, title:'Easy ✓', detail:'10.7km @ 4:59/km · 98m D+', rpe:4 },
+      { d:'Sun', date:'Oct 25', done:true, type:'long', dist:22, title:'KEY · gate 3 ✓ power on target', detail:'12km easy @ 5:14 · 1km @ 3:44 (309W) + 7km @ 3:54 (319W) · gusty W wind 21 km/h cost ~9 s/km at HMP power · 2km CD', rpe:9 },
     ]
   },
   {
-    n: 5, name: 'Business travel · down week', tag: {label:'TRAVEL', cls:'reload'},
-    dates: 'Oct 26 → Nov 1', vol: 74, quality: 8,
+    n: 5, name: 'Business travel + sick', tag: {label:'TRAVEL', cls:'reload'},
+    dates: 'Oct 26 → Nov 1', vol: 38, quality: 10,
     days: [
-      { d:'Mon', date:'Oct 26', type:'easy', dist:8, title:'Easy (travel)', detail:'Recovery from Sunday\'s long run · very easy', rpe:3 },
-      { d:'Tue', date:'Oct 27', type:'easy', dist:10, title:'Easy + strides (travel)', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Wed', date:'Oct 28', type:'easy', dist:10, title:'Easy (travel)', rpe:3 },
-      { d:'Thu', date:'Oct 29', type:'easy', dist:10, title:'Easy + strides (travel)', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Fri', date:'Oct 30', type:'easy', dist:8, title:'Easy + strides (travel back)', detail:'8km + 4×100m strides · run before the trip home', rpe:3 },
-      { d:'Sat', date:'Oct 31', type:'easy', dist:8, title:'Easy', rpe:3 },
-      { d:'Sun', date:'Nov 1', type:'long', dist:20, title:'Progression LR', detail:'12km easy → 6km @ M → 2km @ HMP', rpe:7 },
+      { d:'Mon', date:'Oct 26', done:true, type:'rest', dist:0, title:'Rest (travel)', detail:'No run', rpe:0 },
+      { d:'Tue', date:'Oct 27', done:true, type:'easy', dist:4.5, title:'Short easy (London)', detail:'3.3km @ 5:37 + 1.2km @ 4:32 · rain, wind', rpe:3 },
+      { d:'Wed', date:'Oct 28', done:true, type:'rest', dist:0, title:'Rest (travel, sick)', detail:'No run', rpe:0 },
+      { d:'Thu', date:'Oct 29', done:true, type:'easy', dist:4.3, title:'Short easy (travel)', detail:'4.3km @ 4:42/km', rpe:3 },
+      { d:'Fri', date:'Oct 30', done:true, type:'rest', dist:0, title:'Rest (travel back)', detail:'No run', rpe:0 },
+      { d:'Sat', date:'Oct 31', done:true, type:'long', dist:18.4, title:'Pacing Isaure ✓', detail:'2×5000 @ 4:17 · 18.4km @ 4:42/km avg', rpe:6 },
+      { d:'Sun', date:'Nov 1', done:true, type:'easy', dist:11, title:'Easy ✓ (replaces progression LR)', detail:'11km @ 5:03/km', rpe:4 },
     ]
   },
   {
-    n: 6, name: 'Sharpen', tag: {label:'BUILD', cls:'build'},
-    dates: 'Nov 2 → Nov 8', vol: 72, quality: 24,
+    n: 6, name: 'Sharpen (cut short)', tag: {label:'BUILD', cls:'build'},
+    dates: 'Nov 2 → Nov 8', vol: 45, quality: 6,
     days: [
-      { d:'Mon', date:'Nov 2', type:'rest', dist:0, title:'Rest', rpe:0 },
-      { d:'Tue', date:'Nov 3', type:'cv', dist:11, title:'CV sharpener', detail:'3km WU · 5×1km @ 3:40 · 90" jog · 2km CD', rpe:8 },
-      { d:'Wed', date:'Nov 4', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 6×100m strides', rpe:4 },
-      { d:'Thu', date:'Nov 5', type:'hmp', dist:13, title:'Last big HMP', detail:'3km WU · 2×4km @ HMP (3:47) · 3\' jog · 2km CD', rpe:8 },
-      { d:'Fri', date:'Nov 6', type:'easy', dist:10, title:'Easy', rpe:4 },
-      { d:'Sat', date:'Nov 7', type:'easy', dist:10, title:'Easy + strides', detail:'10km + 5×100m strides', rpe:4 },
-      { d:'Sun', date:'Nov 8', type:'long', dist:18, title:'LR w/ HMP block', detail:'7km easy + 6km @ HMP + 5km easy', rpe:8 },
+      { d:'Mon', date:'Nov 2', done:true, type:'rest', dist:0, title:'Rest ✓', rpe:0 },
+      { d:'Tue', date:'Nov 3', done:true, type:'easy', dist:9.4, title:'Easy (CV dropped)', detail:'9.4km @ 4:56/km', rpe:4 },
+      { d:'Wed', date:'Nov 4', done:true, type:'rest', dist:0, title:'Rest', detail:'No run', rpe:0 },
+      { d:'Thu', date:'Nov 5', done:true, type:'easy', dist:12.1, title:'Easy', detail:'12.1km @ 5:01/km', rpe:4 },
+      { d:'Fri', date:'Nov 6', done:true, type:'hmp', dist:13, title:'2×3000 ✓ (moved from Thu)', detail:'3:44 (324W) · 3:45 (320W) · 3\' jog · wrist HR 190/186 tracks cadence, likely cadence lock', rpe:7 },
+      { d:'Sat', date:'Nov 7', done:true, type:'easy', dist:10.1, title:'Easy ✓', detail:'10.1km @ 5:02/km', rpe:4 },
+      { d:'Sun', date:'Nov 8', done:true, type:'rest', dist:0, title:'Rest (LR dropped)', detail:'No run', rpe:0 },
     ]
   },
   {
     n: 7, name: 'Taper + HM race', tag: {label:'TAPER', cls:'taper'},
-    dates: 'Nov 9 → Nov 15', vol: 44, quality: 8,
+    dates: 'Nov 9 → Nov 15', vol: 58, quality: 28,
     days: [
-      { d:'Mon', date:'Nov 9', type:'rest', dist:0, title:'Rest', rpe:0 },
-      { d:'Tue', date:'Nov 10', type:'hmp', dist:8, title:'HMP primer', detail:'2km WU · 4×1km @ HMP · 2\' jog · 6×100m strides · 1km CD', rpe:6 },
-      { d:'Wed', date:'Nov 11', type:'easy', dist:8, title:'Easy', rpe:3 },
-      { d:'Thu', date:'Nov 12', type:'easy', dist:6, title:'Easy + openers', detail:'6km + 4×200m @ 10K pace', rpe:4 },
-      { d:'Fri', date:'Nov 13', type:'easy', dist:4, title:'Very easy + strides', detail:'4km + 4×100m strides', rpe:3 },
-      { d:'Sat', date:'Nov 14', type:'rest', dist:0, title:'Full rest', rpe:0 },
-      { d:'Sun', date:'Nov 15', type:'race', dist:21.1, title:'HM RACE · sub-1:20', detail:'km1–3: 3:50 · km4–10: 3:47 · km11–15: 3:46 · km16–18: 3:45 · km19+: empty', rpe:10 },
+      { d:'Mon', date:'Nov 9', done:true, type:'hmp', dist:8, title:'3k + 2k ✓ HMP primer', detail:'3:45 (320W) · 3:45 (318W) · 3\' jog · replaces Tue primer · wrist HR 194 ≈ cadence, ignore', rpe:7 },
+      { d:'Tue', date:'Nov 10', done:true, type:'easy', dist:8.5, title:'Easy ✓', detail:'8.5km @ 5:07/km · 86m D+ · rain', rpe:4 },
+      { d:'Wed', date:'Nov 11', type:'easy', dist:9, title:'Easy + strides', detail:'9km @ 5:05–5:15 + 6×100m relaxed strides', rpe:4 },
+      { d:'Thu', date:'Nov 12', type:'rest', dist:0, title:'Rest', rpe:0 },
+      { d:'Fri', date:'Nov 13', type:'hmp', dist:7, title:'Race-pace rehearsal', detail:'3km easy · 2×1km @ 3:47 (~317W) · 90" jog · 2km easy · km1: lock 3:48–3:50 by feel, then check', rpe:5 },
+      { d:'Sat', date:'Nov 14', type:'easy', dist:4.5, title:'Shakeout', detail:'20–25\' very easy + 3×100m strides', rpe:2 },
+      { d:'Sun', date:'Nov 15', type:'race', dist:21.1, title:'HM RACE · 1:20:30–1:21:30', detail:'km1–5: 3:50 (≤313W) · km6–10: 3:47–3:48 (315–317W) · 10km < 37:50 & RPE ≤ 7 → sub-1:20, go 3:45–3:46 (≤320W) · km16+: race · power & pace, not wrist HR', rpe:10 },
     ]
   },
 ];
